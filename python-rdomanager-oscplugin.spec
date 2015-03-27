@@ -12,9 +12,11 @@ BuildArch:      noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 
-Requires:       python-openstackclient
 Requires:       instack
 Requires:       instack-undercloud
+Requires:       python-ironic-discoverd
+Requires:       python-ironicclient
+Requires:       python-openstackclient
 
 %description
 python-rdomanager-oscplugin is a Python plugin to OpenstackClient
