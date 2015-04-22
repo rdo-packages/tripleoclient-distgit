@@ -17,6 +17,7 @@ Requires:       instack-undercloud
 Requires:       python-ironic-discoverd
 Requires:       python-ironicclient
 Requires:       python-openstackclient
+Requires:       tripleo-common
 
 %description
 python-rdomanager-oscplugin is a Python plugin to OpenstackClient
