@@ -17,6 +17,7 @@ Requires:       instack-undercloud
 Requires:       python-ironic-discoverd
 Requires:       python-ironicclient
 Requires:       python-openstackclient
+Requires:       sos
 Requires:       tripleo-common
 
 %description
