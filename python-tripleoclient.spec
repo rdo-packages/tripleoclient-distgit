@@ -1,11 +1,11 @@
-Name:           python-rdomanager-oscplugin
+Name:           python-tripleoclient
 Version:        XXX
 Release:        XXX{?dist}
-Summary:        OpenstackClient plugin for RDO Manager
+Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
-URL:            https://pypi.python.org/pypi/python-rdomanager-oscplugin
-Source0:        https://pypi.python.org/packages/source/p/python-rdomanager-oscplugin/python-rdomanager-oscplugin-%{version}.tar.gz
+URL:            https://pypi.python.org/pypi/python-tripleoclient
+Source0:        https://pypi.python.org/packages/source/p/python-tripleoclient/python-tripleoclient-%{version}.tar.gz
 
 BuildArch:      noarch
 
@@ -21,8 +21,8 @@ Requires:       sos
 Requires:       tripleo-common
 
 %description
-python-rdomanager-oscplugin is a Python plugin to OpenstackClient
-for RDO Manager <https://github.com/rdo-management>.
+python-tripleoclient is a Python plugin to OpenstackClient
+for TripleO <https://github.com/openstack/python-tripleoclient>.
 
 
 %prep
@@ -40,8 +40,8 @@ rm -rf {test-,}requirements.txt
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
 %files
-%{python2_sitelib}/rdomanager_oscplugin*
-%{python2_sitelib}/python_rdomanager_oscplugin*
+%{python2_sitelib}/tripleoclient*
+%{python2_sitelib}/python_tripleoclient*
 %doc LICENSE README.rst
 
 %changelog
