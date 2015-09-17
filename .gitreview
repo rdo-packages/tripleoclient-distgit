@@ -1,5 +1,5 @@
 [gerrit]
 host=review.gerrithub.io
 port=29418
-project=rdo-management/python-rdomanager-oscplugin-packaging
-defaultbranch=packaging
+project=openstack-packages/python-tripleoclient
+defaultbranch=rpm-master

@@ -14,11 +14,14 @@ BuildRequires:  python-pbr
 
 Requires:       instack
 Requires:       instack-undercloud
-Requires:       python-ironic-discoverd
+Requires:       python-ironic-inspector-client
 Requires:       python-ironicclient
 Requires:       python-openstackclient
 Requires:       sos
 Requires:       tripleo-common
+
+Obsoletes: python-rdomanager-oscplugin < 0.0.9-1
+Provides: python-rdomanager-oscplugin = %{version}-%{release}
 
 %description
 python-tripleoclient is a Python plugin to OpenstackClient
