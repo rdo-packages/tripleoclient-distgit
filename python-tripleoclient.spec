@@ -17,6 +17,7 @@ BuildArch:      noarch
 
 BuildRequires:  git
 BuildRequires:  python2-devel
+BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
 
 Requires:       instack
