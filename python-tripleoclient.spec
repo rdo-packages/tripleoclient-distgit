@@ -5,7 +5,7 @@
 
 Name:           python-tripleoclient
 Version:        0.0.11
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
@@ -30,6 +30,10 @@ Requires:       tripleo-common
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.9-1
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
+
+#
+# patches_base=2aac09de13f4cfd4b9d87cdcdd860388e21aef0a
+#
 
 %description
 python-tripleoclient is a Python plugin to OpenstackClient
@@ -56,6 +60,9 @@ rm -rf {test-,}requirements.txt
 %doc LICENSE README.rst
 
 %changelog
+* Tue Oct 20 2015 John Trowbridge <trown@redhat.com> - 0.0.11-2
+- Remove hardcoded RDO_RELEASE = kilo
+
 * Mon Oct 19 2015 John Trowbridge <trown@redhat.com> - 0.0.11-1
 - Use a source tarball for a git hash that has passed delorean CI for liberty release
 

@@ -1,0 +1,25 @@
+From 5f6712855fed2301708faef1a32580352171c58d Mon Sep 17 00:00:00 2001
+From: John Trowbridge <trown@redhat.com>
+Date: Tue, 20 Oct 2015 12:24:25 -0400
+Subject: [PATCH] Remove hardcoded RDO_RELEASE = kilo
+
+Change-Id: I5613aa7b939173e21cf0c79bd864fbf3ee08836f
+---
+ tripleoclient/v1/overcloud_image.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/tripleoclient/v1/overcloud_image.py b/tripleoclient/v1/overcloud_image.py
+index 12a94ed..a77e4de 100644
+--- a/tripleoclient/v1/overcloud_image.py
++++ b/tripleoclient/v1/overcloud_image.py
+@@ -417,7 +417,6 @@ class BuildOvercloudImage(command.Command):
+             self._set_env_var(env_vars, 'FS_TYPE', 'xfs')
+ 
+             if env_vars.get('RHOS') == '0':
+-                env_vars['RDO_RELEASE'] = 'kilo'
+                 dib_common_elements.extend([
+                     'epel',
+                     'rdo-release',
+-- 
+2.4.3
+
