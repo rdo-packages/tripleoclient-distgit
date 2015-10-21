@@ -17,6 +17,7 @@ Requires:       instack-undercloud
 Requires:       python-ironic-inspector-client
 Requires:       python-ironicclient
 Requires:       python-openstackclient
+Requires:	python-passlib
 Requires:       sos
 Requires:       tripleo-common
 
