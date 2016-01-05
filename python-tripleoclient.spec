@@ -21,7 +21,7 @@ Requires:	python-passlib
 Requires:       sos
 Requires:       tripleo-common
 
-Obsoletes: python-rdomanager-oscplugin < 0.0.9-1
+Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
 
 %description
