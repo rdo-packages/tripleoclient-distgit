@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-9dba36c647a9141911c1b18f53f21c446b5b4297	tripleoclient-distgit-ptl
+# UUID          Group Name
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
+ce90248d780e76275ae581540ff4af8491f12048       	tripleoclient-distgit-core
+9dba36c647a9141911c1b18f53f21c446b5b4297        	tripleoclient-distgit-ptl
+global:Registered-Users		Registered Users
