@@ -1,6 +1,6 @@
 Name:           python-tripleoclient
 Version:        XXX
-Release:        XXX{?dist}
+Release:        XXX
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
