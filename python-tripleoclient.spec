@@ -49,5 +49,3 @@ rm -rf {test-,}requirements.txt
 %doc LICENSE README.rst
 
 %changelog
-* Thu Mar 19 2015 Brad P. Crochet <brad@redhat.com> - 0.1.0-1
-- Initial package.
