@@ -11,6 +11,7 @@ BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
+BuildRequires:  python-setuptools
 
 Requires:       instack
 Requires:       instack-undercloud
