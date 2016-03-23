@@ -1,11 +1,12 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:           python-tripleoclient
-Version:        XXX
-Release:        XXX
+Version:        1.0.0
+Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/python-tripleoclient
-Source0:        https://pypi.python.org/packages/source/p/python-tripleoclient/python-tripleoclient-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/p/python-tripleoclient/python-tripleoclient-%{version}%{?milestone}.tar.gz
 
 BuildArch:      noarch
 
@@ -50,3 +51,5 @@ rm -rf {test-,}requirements.txt
 %doc LICENSE README.rst
 
 %changelog
+* Wed Mar 23 2016 RDO <rdo-list@redhat.com> 1.0.0-0.1
+-  Rebuild for Mitaka 
