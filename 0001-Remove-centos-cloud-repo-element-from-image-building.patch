@@ -1,0 +1,30 @@
+From d15e45bb6fc43221a3970de7fa4d8faa1184cd67 Mon Sep 17 00:00:00 2001
+From: John Trowbridge <trown@redhat.com>
+Date: Thu, 31 Mar 2016 14:31:13 -0400
+Subject: [PATCH] Remove centos-cloud-repo element from image building
+
+We are configuring this repo as the delorean-deps repo now,
+so there is no need for this element.
+
+Further, it is broken. Might as well just nuke it.
+
+Closes-Bug: 1564558
+
+Change-Id: I9c1ef707dabe180d31acf8cf50a41b8bc51c1ad5
+(cherry picked from commit 24f550fc0fee4eb74f8579112f1ecadc34a1ccb6)
+---
+ tripleoclient/v1/overcloud_image.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/tripleoclient/v1/overcloud_image.py b/tripleoclient/v1/overcloud_image.py
+index ecd0a0b..88cc03c 100644
+--- a/tripleoclient/v1/overcloud_image.py
++++ b/tripleoclient/v1/overcloud_image.py
+@@ -445,7 +445,6 @@ class BuildOvercloudImage(command.Command):
+             env_vars['DELOREAN_REPO_URL'] = parsed_args.delorean_trunk_repo
+             dib_common_elements.extend([
+                 'selinux-permissive',
+-                'centos-cloud-repo',
+             ])
+ 
+             parsed_args.discovery_image_element = " ".join([
