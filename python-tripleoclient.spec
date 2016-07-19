@@ -31,6 +31,7 @@ BuildRequires:  python-pbr
 Requires:       python-ironic-inspector-client
 Requires:       python-ironicclient
 Requires:       python-openstackclient
+Requires:       python-osc-lib >= 0.3.0
 Requires:       python-websocket-client
 Requires:       tripleo-common
 Requires:       python-babel
@@ -59,6 +60,7 @@ BuildRequires:  python3-pbr
 Requires:       python3-ironic-inspector-client
 Requires:       python3-ironicclient
 Requires:       python3-openstackclient
+Requires:       python3-osc-lib >= 0.3.0
 Requires:       python3-websocket-client
 # FIX tripleo-common python 3 package name
 Requires:       tripleo-common
