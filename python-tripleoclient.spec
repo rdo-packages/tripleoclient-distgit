@@ -15,11 +15,18 @@ BuildRequires:  python-setuptools
 
 Requires:       instack
 Requires:       instack-undercloud
+Requires:       python-cliff
+Requires:       python-heatclient
 Requires:       python-ironic-inspector-client
 Requires:       python-ironicclient
+Requires:       python-ipaddress
+Requires:       python-mistralclient
 Requires:       python-openstackclient
+Requires:       python-osc-lib >= 0.3.0
+Requires:       python-os-cloud-config
 Requires:       python-websocket-client
-Requires:	python-passlib
+Requires:       python-passlib
+Requires:       python-six
 Requires:       sos
 Requires:       tripleo-common
 
