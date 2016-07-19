@@ -18,6 +18,7 @@ Requires:       instack-undercloud
 Requires:       python-ironic-inspector-client
 Requires:       python-ironicclient
 Requires:       python-openstackclient
+Requires:       python-osc-lib >= 0.3.0
 Requires:       python-websocket-client
 Requires:	python-passlib
 Requires:       sos
