@@ -12,6 +12,11 @@ BuildArch:      noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
+# testing requirements
+BuildRequires:  python-fixtures
+BuildRequires:  python-mock
+BuildRequires:  python-testrepository
+BuildRequires:  python-testtools
 
 Requires:       instack
 Requires:       instack-undercloud
@@ -45,6 +50,9 @@ rm -rf {test-,}requirements.txt
 
 %install
 %{__python2} setup.py install --skip-build --root %{buildroot}
+
+%check
+%{__python2} setup.py testr
 
 %files
 %{python2_sitelib}/tripleoclient*
