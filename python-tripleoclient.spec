@@ -12,15 +12,36 @@ BuildArch:      noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
+# testing requirements
+BuildRequires:  python-fixtures
+BuildRequires:  python-mock
+BuildRequires:  python-testrepository
+BuildRequires:  python-testtools
+BuildRequires:  python-cliff
+BuildRequires:  python-ironicclient
+BuildRequires:  python-ironic-inspector-client
+BuildRequires:  python-heatclient
+BuildRequires:  python-mistralclient
+BuildRequires:  python-openstackclient
+BuildRequires:  python-os-cloud-config
+BuildRequires:  python-websocket-client
+BuildRequires:  PyYAML
+BuildRequires:  python-passlib
+BuildRequires:  tripleo-common
 
 Requires:       instack
 Requires:       instack-undercloud
+Requires:       python-cliff
 Requires:       python-ironic-inspector-client
 Requires:       python-ironicclient
+Requires:       python-heatclient
+Requires:       python-mistralclient
 Requires:       python-openstackclient
 Requires:       python-osc-lib >= 0.3.0
+Requires:       python-os-cloud-config
 Requires:       python-websocket-client
-Requires:	python-passlib
+Requires:       python-passlib
+Requires:       python-six
 Requires:       sos
 Requires:       tripleo-common
 
@@ -45,6 +66,9 @@ rm -rf {test-,}requirements.txt
 
 %install
 %{__python2} setup.py install --skip-build --root %{buildroot}
+
+%check
+%{__python2} setup.py testr
 
 %files
 %{python2_sitelib}/tripleoclient*
