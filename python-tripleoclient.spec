@@ -27,7 +27,7 @@ BuildRequires:  os-cloud-config
 BuildRequires:  python-websocket-client
 BuildRequires:  PyYAML
 BuildRequires:  python-passlib
-BuildRequires:  tripleo-common
+BuildRequires:  openstack-tripleo-common
 
 Requires:       instack
 Requires:       instack-undercloud
@@ -43,7 +43,7 @@ Requires:       python-websocket-client
 Requires:       python-passlib
 Requires:       python-six
 Requires:       sos
-Requires:       tripleo-common
+Requires:       openstack-tripleo-common
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
