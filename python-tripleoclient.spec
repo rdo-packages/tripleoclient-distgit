@@ -28,6 +28,7 @@ BuildRequires:  python-websocket-client
 BuildRequires:  PyYAML
 BuildRequires:  python-passlib
 BuildRequires:  openstack-tripleo-common
+BuildRequires:  python-requests-mock
 
 Requires:       instack
 Requires:       instack-undercloud
