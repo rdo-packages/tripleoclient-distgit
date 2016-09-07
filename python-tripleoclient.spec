@@ -29,6 +29,7 @@ BuildRequires:  PyYAML
 BuildRequires:  python-passlib
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  python2-osc-lib-tests
+BuildRequires:  python-requests-mock
 
 Requires:       instack
 Requires:       instack-undercloud
