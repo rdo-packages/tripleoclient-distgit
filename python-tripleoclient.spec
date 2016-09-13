@@ -1,8 +1,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-tripleoclient
-Version:        XXX
-Release:        XXX
+Version:        5.0.0
+Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
@@ -72,7 +72,7 @@ rm -rf {test-,}requirements.txt
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
 %check
-%{__python2} setup.py testr
+PYTHONPATH=. %{__python2} setup.py testr
 
 %files
 %{python2_sitelib}/tripleoclient*
@@ -80,3 +80,6 @@ rm -rf {test-,}requirements.txt
 %doc LICENSE README.rst
 
 %changelog
+* Tue Sep 13 2016 Haikel Guemar <hguemar@fedoraproject.org> 5.0.0-1
+- Update to 5.0.0
+
