@@ -5,7 +5,7 @@ Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/python-tripleoclient
-Source0:        https://pypi.python.org/packages/source/p/python-tripleoclient/python-tripleoclient-%{version}.tar.gz
+Source0:        https://tarballs.openstack.org/python-tripleoclient/python-tripleoclient-%{version}.tar.gz
 
 BuildArch:      noarch
 
