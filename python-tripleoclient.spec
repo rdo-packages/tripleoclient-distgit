@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-tripleoclient
-Version:        5.0.0
+Version:        5.2.0
 Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
@@ -80,6 +80,9 @@ PYTHONPATH=. %{__python2} setup.py testr
 %doc LICENSE README.rst
 
 %changelog
+* Fri Sep 30 2016 Haikel Guemar <hguemar@fedoraproject.org> 5.2.0-1
+- Update to 5.2.0
+
 * Tue Sep 13 2016 Haikel Guemar <hguemar@fedoraproject.org> 5.0.0-1
 - Update to 5.0.0
 
