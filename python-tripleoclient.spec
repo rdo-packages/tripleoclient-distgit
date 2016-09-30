@@ -1,3 +1,5 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:           python-tripleoclient
 Version:        XXX
 Release:        XXX
