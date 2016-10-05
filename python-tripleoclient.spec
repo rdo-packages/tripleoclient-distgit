@@ -80,3 +80,4 @@ rm -rf {test-,}requirements.txt
 %doc LICENSE README.rst
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tripleoclient/commit/?id=a6221608bd7641d7eeac6ad3733d37e51989d9f9
