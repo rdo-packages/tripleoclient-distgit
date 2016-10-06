@@ -1,13 +1,17 @@
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{!?upstream_version: %global upstream_version %{commit}}
+%global commit 34590cc25b28581d964c68e459bd3a01b2cce4ec
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+# DO NOT REMOVE ALPHATAG
+%global alphatag .%{shortcommit}git
 
 Name:           python-tripleoclient
-Version:        5.2.0
-Release:        1%{?dist}
+Version:        5.2.1
+Release:        0.1%{?alphatag}%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/python-tripleoclient
-Source0:        https://tarballs.openstack.org/python-tripleoclient/python-tripleoclient-%{version}.tar.gz
+Source0:        https://github.com/openstack/%{name}/archive/%{commit}.tar.gz#/%{name}-%{shortcommit}.tar.gz
 
 BuildArch:      noarch
 
@@ -32,6 +36,7 @@ BuildRequires:  python-passlib
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
+BuildRequires:  git
 
 Requires:       instack
 Requires:       instack-undercloud
@@ -58,7 +63,7 @@ for TripleO <https://github.com/openstack/python-tripleoclient>.
 
 
 %prep
-%setup -q -n %{name}-%{upstream_version}
+%autosetup -n %{name}-%{upstream_version} -S git
 sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
 
 # Remove the requirements file so that pbr hooks don't add it
@@ -80,6 +85,9 @@ PYTHONPATH=. %{__python2} setup.py testr
 %doc LICENSE README.rst
 
 %changelog
+* Wed Oct 6 2016 Alfredo Moralejo <amoralej@redhat.com> 5.2.1-0.1.34590ccgit
+- Updated to post 5.2.0 (34590cc25b28581d964c68e459bd3a01b2cce4ec)
+
 * Fri Sep 30 2016 Haikel Guemar <hguemar@fedoraproject.org> 5.2.0-1
 - Update to 5.2.0
 
