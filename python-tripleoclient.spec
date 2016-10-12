@@ -32,6 +32,7 @@ BuildRequires:  python-passlib
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
+BuildRequires:  git
 
 Requires:       instack
 Requires:       instack-undercloud
@@ -58,7 +59,7 @@ for TripleO <https://github.com/openstack/python-tripleoclient>.
 
 
 %prep
-%setup -q -n %{name}-%{upstream_version}
+%autosetup -n %{name}-%{upstream_version} -S git
 sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
 
 # Remove the requirements file so that pbr hooks don't add it
