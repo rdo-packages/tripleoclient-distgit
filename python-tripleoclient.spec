@@ -73,7 +73,7 @@ rm -rf {test-,}requirements.txt
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
 %check
-%{__python2} setup.py testr
+PYTHONPATH=. %{__python2} setup.py testr
 
 %files
 %{python2_sitelib}/tripleoclient*
