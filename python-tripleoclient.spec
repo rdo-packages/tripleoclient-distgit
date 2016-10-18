@@ -1,17 +1,13 @@
-%{!?upstream_version: %global upstream_version %{commit}}
-%global commit 34590cc25b28581d964c68e459bd3a01b2cce4ec
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-# DO NOT REMOVE ALPHATAG
-%global alphatag .%{shortcommit}git
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-tripleoclient
-Version:        5.2.1
-Release:        0.1%{?alphatag}%{?dist}
+Version:        5.3.0
+Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/python-tripleoclient
-Source0:        https://github.com/openstack/%{name}/archive/%{commit}.tar.gz#/%{name}-%{shortcommit}.tar.gz
+Source0:        https://tarballs.openstack.org/python-tripleoclient/python-tripleoclient-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 
@@ -85,6 +81,9 @@ PYTHONPATH=. %{__python2} setup.py testr
 %doc LICENSE README.rst
 
 %changelog
+* Tue Oct 18 2016 Alfredo Moralejo <amoralej@redhat.com> 5.3.0-1
+- Update to 5.3.0
+
 * Wed Oct 6 2016 Alfredo Moralejo <amoralej@redhat.com> 5.2.1-0.1.34590ccgit
 - Updated to post 5.2.0 (34590cc25b28581d964c68e459bd3a01b2cce4ec)
 
