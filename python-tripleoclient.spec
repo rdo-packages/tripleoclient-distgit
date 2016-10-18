@@ -93,3 +93,4 @@ PYTHONPATH=. %{__python2} setup.py testr
 * Tue Sep 13 2016 Haikel Guemar <hguemar@fedoraproject.org> 5.0.0-1
 - Update to 5.0.0
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tripleoclient/commit/?id=0b2984f687c4377b7367cfaf7f72a25a9bfbb6bd
