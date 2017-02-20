@@ -1,8 +1,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-tripleoclient
-Version:        XXX
-Release:        XXX
+Version:        6.0.0
+Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
@@ -84,3 +84,6 @@ PYTHONPATH=. %{__python2} setup.py testr
 %doc LICENSE README.rst
 
 %changelog
+* Mon Feb 20 2017 Alfredo Moralejo <amoralej@redhat.com> 6.0.0-1
+- Update to 6.0.0
+
