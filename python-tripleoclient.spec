@@ -84,3 +84,4 @@ PYTHONPATH=. %{__python2} setup.py testr
 %doc LICENSE README.rst
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tripleoclient/commit/?id=1f46bd51526bcbc572b33c5dc641c8ee09cc0523
