@@ -25,7 +25,6 @@ BuildRequires:  python-ironic-inspector-client
 BuildRequires:  python-heatclient
 BuildRequires:  python-mistralclient
 BuildRequires:  python-openstackclient
-BuildRequires:  os-cloud-config
 BuildRequires:  python-websocket-client
 BuildRequires:  PyYAML
 BuildRequires:  python-passlib
@@ -46,7 +45,6 @@ Requires:       python-mistralclient >= 2.0.0
 Requires:       python-openstackclient >= 3.3.0
 Requires:       python-osc-lib >= 1.2.0
 Requires:       python-pbr
-Requires:       os-cloud-config
 Requires:       python-websocket-client
 Requires:       python-passlib
 Requires:       python-six
@@ -83,4 +81,3 @@ PYTHONPATH=. %{__python2} setup.py testr
 %{python2_sitelib}/python_tripleoclient*
 %doc LICENSE README.rst
 
-%changelog
