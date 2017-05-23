@@ -1,14 +1,12 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:           python-tripleoclient
-Version:        2.0.0
-Release:        1.0.1%{?dist}
+Version:        2.2.0
+Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/python-tripleoclient
-Source0:        https://pypi.python.org/packages/source/p/python-tripleoclient/python-tripleoclient-%{upstream_version}.tar.gz
-
-Patch0001: 0001-Remove-centos-cloud-repo-element-from-image-building.patch
+Source0:        https://tarballs.openstack.org/python-tripleoclient/python-tripleoclient-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 
@@ -36,8 +34,6 @@ for TripleO <https://github.com/openstack/python-tripleoclient>.
 %prep
 %setup -q -n %{name}-%{upstream_version}
 
-%patch0001 -p1
-
 sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
 
 # Remove the requirements file so that pbr hooks don't add it
@@ -56,6 +52,9 @@ rm -rf {test-,}requirements.txt
 %doc LICENSE README.rst
 
 %changelog
+* Tue May 23 2017 Alfredo Moralejo <amoralej@redhat.com> 2.2.0-1
+- Update to 2.2.0
+
 * Fri May 13 2016 Thierry Vignaud <tvignaud@redhat.com> - 2.0.0-1.0.1
 - bump release for rpmdiff
 
