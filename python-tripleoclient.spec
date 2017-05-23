@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:           python-tripleoclient
-Version:        2.0.0
-Release:        1.0.1%{?dist}
+Version:        2.2.0
+Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
@@ -56,6 +56,9 @@ rm -rf {test-,}requirements.txt
 %doc LICENSE README.rst
 
 %changelog
+* Tue May 23 2017 Alfredo Moralejo <amoralej@redhat.com> 2.2.0-1
+- Update to 2.2.0
+
 * Fri May 13 2016 Thierry Vignaud <tvignaud@redhat.com> - 2.0.0-1.0.1
 - bump release for rpmdiff
 
