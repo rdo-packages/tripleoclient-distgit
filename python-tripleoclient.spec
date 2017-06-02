@@ -33,23 +33,37 @@ BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
 BuildRequires:  git
 
+Requires:       docker >= 1.12.6
 Requires:       instack
 Requires:       instack-undercloud
+Requires:       openstack-heat-api
+Requires:       openstack-heat-engine
+Requires:       openstack-heat-monolith
+Requires:       openstack-kolla
+Requires:       openstack-puppet-modules
+Requires:       openstack-tripleo-common >= 5.0.0
+Requires:       openvswitch
 Requires:       python-babel >= 2.3.4
 Requires:       python-cliff
+Requires:       python-heat-agent
+Requires:       python-heat-agent-apply-config
+Requires:       python-heat-agent-docker-cmd
+Requires:       python-heat-agent-hiera
+Requires:       python-heat-agent-json-file
+Requires:       python-heat-agent-puppet
+Requires:       python-heatclient >= 1.6.1
+Requires:       python-ipaddr
 Requires:       python-ipaddress
 Requires:       python-ironic-inspector-client >= 1.5.0
 Requires:       python-ironicclient >= 1.10.0
-Requires:       python-heatclient >= 1.6.1
 Requires:       python-mistralclient >= 2.0.0
 Requires:       python-openstackclient >= 3.3.0
 Requires:       python-osc-lib >= 1.2.0
-Requires:       python-pbr
-Requires:       python-websocket-client
 Requires:       python-passlib
+Requires:       python-pbr
 Requires:       python-six
+Requires:       python-websocket-client
 Requires:       sos
-Requires:       openstack-tripleo-common >= 5.0.0
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
