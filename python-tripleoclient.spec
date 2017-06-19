@@ -32,6 +32,7 @@ BuildRequires:  openstack-tripleo-common
 BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
 BuildRequires:  git
+BuildRequires:  instack-undercloud
 
 Requires:       instack
 Requires:       instack-undercloud
