@@ -48,6 +48,7 @@ Requires:       python-osc-lib >= 1.2.0
 Requires:       python-pbr
 Requires:       python-websocket-client
 Requires:       python-passlib
+Requires:       python-simplejson >= 2.2.0
 Requires:       python-six
 Requires:       sos
 Requires:       openstack-tripleo-common >= 5.0.0
