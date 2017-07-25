@@ -33,6 +33,7 @@ BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
 BuildRequires:  git
 BuildRequires:  instack-undercloud
+BuildRequires:  ceph-ansible 
 
 Requires:       instack
 Requires:       instack-undercloud
