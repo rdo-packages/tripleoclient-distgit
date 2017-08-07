@@ -40,18 +40,18 @@ Requires:       python-babel >= 2.3.4
 Requires:       python-cliff
 Requires:       python-ipaddress
 Requires:       python-ironic-inspector-client >= 1.5.0
-Requires:       python-ironicclient >= 1.10.0
+Requires:       python-ironicclient >= 1.14.0
 Requires:       python-heatclient >= 1.6.1
-Requires:       python-mistralclient >= 2.0.0
+Requires:       python-mistralclient >= 3.1.0
 Requires:       python-openstackclient >= 3.3.0
-Requires:       python-osc-lib >= 1.2.0
+Requires:       python-osc-lib >= 1.7.0
 Requires:       python-pbr
 Requires:       python-websocket-client
 Requires:       python-passlib
 Requires:       python-simplejson >= 2.2.0
 Requires:       python-six
 Requires:       sos
-Requires:       openstack-tripleo-common >= 5.0.0
+Requires:       openstack-tripleo-common >= 7.1.0
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
