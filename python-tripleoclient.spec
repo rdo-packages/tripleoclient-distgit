@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-tripleoclient
-Version:        5.4.2
+Version:        5.4.3
 Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
@@ -81,6 +81,9 @@ PYTHONPATH=. %{__python2} setup.py testr
 %doc LICENSE README.rst
 
 %changelog
+* Mon Sep 04 2017 rdo-trunk <javier.pena@redhat.com> 5.4.3-1
+- Update to 5.4.3
+
 * Thu May 18 2017 Alfredo Moralejo <amoralej@redhat.com> 5.4.2-1
 - Update to 5.4.2
 
