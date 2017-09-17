@@ -33,6 +33,7 @@ BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
 BuildRequires:  git
 BuildRequires:  instack-undercloud
+BuildRequires: openstack-macros
 
 Requires:       instack
 Requires:       instack-undercloud
@@ -67,7 +68,7 @@ sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
 
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config
-rm -rf {test-,}requirements.txt
+%py_req_cleanup
 
 %build
 %{__python2} setup.py build
