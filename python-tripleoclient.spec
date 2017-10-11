@@ -43,7 +43,7 @@ Requires:       python-ironic-inspector-client >= 1.5.0
 Requires:       python-ironicclient >= 1.14.0
 Requires:       python-heatclient >= 1.6.1
 Requires:       python-mistralclient >= 3.1.0
-Requires:       python-openstackclient >= 3.3.0
+Requires:       python-openstackclient >= 3.11.0
 Requires:       python-osc-lib >= 1.7.0
 Requires:       python-pbr
 Requires:       python-websocket-client
