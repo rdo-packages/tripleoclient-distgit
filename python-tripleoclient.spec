@@ -25,6 +25,7 @@ BuildRequires:  python-ironic-inspector-client
 BuildRequires:  python-heatclient
 BuildRequires:  python-mistralclient
 BuildRequires:  python-openstackclient
+BuildRequires:  python-oslo-config
 BuildRequires:  python-websocket-client
 BuildRequires:  PyYAML
 BuildRequires:  python-passlib
@@ -73,9 +74,11 @@ sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
 
 %build
 %{__python2} setup.py build
+PYTHONPATH=. oslo-config-generator --config-file=config-generator/undercloud.conf
 
 %install
 %{__python2} setup.py install --skip-build --root %{buildroot}
+install -p -D -m 640 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
 
 %check
 PYTHONPATH=. %{__python2} setup.py testr
