@@ -27,6 +27,7 @@ BuildRequires:  python-mistralclient
 BuildRequires:  python-openstackclient
 BuildRequires:  python-oslo-config
 BuildRequires:  python-websocket-client
+BuildRequires:  python-zaqarclient
 BuildRequires:  PyYAML
 BuildRequires:  python-passlib
 BuildRequires:  openstack-tripleo-common
@@ -34,7 +35,7 @@ BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
 BuildRequires:  git
 BuildRequires:  instack-undercloud
-BuildRequires: openstack-macros
+BuildRequires:  openstack-macros
 
 Requires:       instack
 Requires:       instack-undercloud
@@ -55,6 +56,7 @@ Requires:       python-simplejson >= 2.2.0
 Requires:       python-six
 Requires:       sos
 Requires:       openstack-tripleo-common >= 7.1.0
+Requires:       python-zaqarclient>=1.0.0
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
