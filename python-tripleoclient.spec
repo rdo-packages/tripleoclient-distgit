@@ -50,6 +50,7 @@ Requires:       python-mistralclient >= 3.1.0
 Requires:       python-openstackclient >= 3.12.0
 Requires:       python-osc-lib >= 1.7.0
 Requires:       python-pbr
+Requires:       python-psutil
 Requires:       python-websocket-client
 Requires:       python-passlib
 Requires:       python-simplejson >= 2.2.0
