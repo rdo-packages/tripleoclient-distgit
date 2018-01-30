@@ -39,6 +39,7 @@ BuildRequires:  openstack-macros
 
 Requires:       instack
 Requires:       instack-undercloud
+Requires:       instack-undercloud-container
 Requires:       openstack-selinux
 Requires:       python-babel >= 2.3.4
 Requires:       python-cliff
