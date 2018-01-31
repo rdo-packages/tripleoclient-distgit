@@ -36,6 +36,7 @@ BuildRequires:  python-requests-mock
 BuildRequires:  git
 BuildRequires:  instack-undercloud
 BuildRequires:  openstack-macros
+BuildRequires:  python-tripleoclient-container
 
 Requires:       instack
 Requires:       instack-undercloud
@@ -55,6 +56,7 @@ Requires:       python-websocket-client
 Requires:       python-passlib
 Requires:       python-simplejson >= 2.2.0
 Requires:       python-six
+Requires:       python-tripleoclient-container
 Requires:       sos
 Requires:       openstack-tripleo-common >= 7.1.0
 Requires:       python-zaqarclient >= 1.0.0
@@ -67,6 +69,23 @@ Provides: python-rdomanager-oscplugin = %{version}-%{release}
 python-tripleoclient is a Python plugin to OpenstackClient
 for TripleO <https://github.com/openstack/python-tripleoclient>.
 
+%package container
+Summary:        Components required for a containerized undercloud
+
+# Required for containerized undercloud
+Requires:       docker
+Requires:       docker-distribution
+Requires:       python-ipaddr
+Requires:       openvswitch
+Requires:       openstack-heat-api
+Requires:       openstack-heat-engine
+Requires:       openstack-heat-agents
+# required as we now use --heat-native
+Requires:       openstack-heat-monolith
+
+%description container
+python-tripleoclient-container is a sub-package that contains all dependencies to
+deploy a containerized undercloud with tripleo client.
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
@@ -92,5 +111,7 @@ PYTHONPATH=. %{__python2} setup.py testr
 %{python2_sitelib}/tripleoclient*
 %{python2_sitelib}/python_tripleoclient*
 %doc LICENSE README.rst
+
+%files container
 
 %changelog
