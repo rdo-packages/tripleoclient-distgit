@@ -1,3 +1,6 @@
+# guard for package OSP does not support
+%global rhosp 0
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-tripleoclient
@@ -67,6 +70,26 @@ Provides: python-rdomanager-oscplugin = %{version}-%{release}
 python-tripleoclient is a Python plugin to OpenstackClient
 for TripleO <https://github.com/openstack/python-tripleoclient>.
 
+# Not supported by OSP yet
+%package heat-installer
+Summary:        Components required for a containerized undercloud
+
+# Required for containerized undercloud
+Requires:       docker
+Requires:       docker-distribution
+Requires:       python-ipaddr
+Requires:       openvswitch
+Requires:       openstack-heat-agents
+Requires:       openstack-heat-api
+Requires:       openstack-heat-engine
+# required as we now use --heat-native
+Requires:       openstack-heat-monolith
+Requires:       openstack-tripleo-heat-templates
+Requires:       puppet-tripleo
+
+%description heat-installer
+python-tripleoclient-heat-installer is a sub-package that contains all dependencies to
+deploy a containerized undercloud with tripleo client.
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
@@ -92,5 +115,7 @@ PYTHONPATH=. %{__python2} setup.py testr
 %{python2_sitelib}/tripleoclient*
 %{python2_sitelib}/python_tripleoclient*
 %doc LICENSE README.rst
+
+%files heat-installer
 
 %changelog
