@@ -12,24 +12,24 @@ Source0:        https://tarballs.openstack.org/python-tripleoclient/python-tripl
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
 # testing requirements
-BuildRequires:  python-fixtures
-BuildRequires:  python-mock
-BuildRequires:  python-testrepository
-BuildRequires:  python-testtools
-BuildRequires:  python-cliff
-BuildRequires:  python-ironicclient
+BuildRequires:  python2-fixtures
+BuildRequires:  python2-mock
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testtools
+BuildRequires:  python2-cliff
+BuildRequires:  python2-ironicclient
 BuildRequires:  python-ironic-inspector-client
-BuildRequires:  python-heatclient
-BuildRequires:  python-mistralclient
-BuildRequires:  python-openstackclient
-BuildRequires:  python-oslo-config
+BuildRequires:  python2-heatclient
+BuildRequires:  python2-mistralclient
+BuildRequires:  python2-openstackclient
+BuildRequires:  python2-oslo-config
 BuildRequires:  python-websocket-client
-BuildRequires:  python-zaqarclient
+BuildRequires:  python2-zaqarclient
 BuildRequires:  PyYAML
-BuildRequires:  python-passlib
+BuildRequires:  python2-passlib
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
@@ -40,25 +40,25 @@ BuildRequires:  openstack-macros
 Requires:       instack
 Requires:       instack-undercloud
 Requires:       openstack-selinux
-Requires:       python-babel >= 2.3.4
-Requires:       python-cliff
+Requires:       python2-babel >= 2.3.4
+Requires:       python2-cliff
 Requires:       python-ipaddress
 Requires:       python-ironic-inspector-client >= 1.5.0
-Requires:       python-ironicclient >= 1.14.0
-Requires:       python-heatclient >= 1.6.1
-Requires:       python-mistralclient >= 3.1.0
-Requires:       python-openstackclient >= 3.12.0
-Requires:       python-osc-lib >= 1.7.0
-Requires:       python-pbr
-Requires:       python-psutil
+Requires:       python2-ironicclient >= 2.2.0
+Requires:       python2-heatclient >= 1.10.0
+Requires:       python2-mistralclient >= 3.1.0
+Requires:       python2-openstackclient >= 3.12.0
+Requires:       python2-osc-lib >= 1.8.0
+Requires:       python2-pbr
+Requires:       python2-psutil
 Requires:       python-websocket-client
-Requires:       python-passlib
-Requires:       python-simplejson >= 2.2.0
-Requires:       python-six
+Requires:       python2-passlib
+Requires:       python-simplejson >= 3.5.1
+Requires:       python2-six
 Requires:       sos
 Requires:       openstack-tripleo-common >= 7.1.0
-Requires:       python-zaqarclient >= 1.0.0
-Requires:       python-cryptography >= 1.6
+Requires:       python2-zaqarclient >= 1.0.0
+Requires:       python2-cryptography >= 1.7.2
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
