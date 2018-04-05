@@ -104,7 +104,10 @@ PYTHONPATH=. oslo-config-generator --config-file=config-generator/undercloud.con
 
 %install
 %{__python2} setup.py install --skip-build --root %{buildroot}
-install -p -D -m 640 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
+# undercloud.conf.sample needs to be copied by the user when deploying an undercloud,
+# so 644 is enough to make it happen. Note instack-undercloud had similar permissions for
+# this file.
+install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
 
 %check
 PYTHONPATH=. %{__python2} setup.py testr
