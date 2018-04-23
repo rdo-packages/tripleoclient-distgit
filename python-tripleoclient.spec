@@ -78,7 +78,7 @@ Requires:       docker
 Requires:       docker-distribution
 Requires:       python-ipaddr
 Requires:       openvswitch
-Requires:       openstack-heat-agents >= 1.6.0
+Requires:       openstack-heat-agents
 Requires:       openstack-heat-api
 Requires:       openstack-heat-engine
 # required as we now use --heat-native
