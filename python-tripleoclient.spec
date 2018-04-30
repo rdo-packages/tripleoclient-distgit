@@ -57,6 +57,7 @@ Requires:       python-simplejson >= 3.5.1
 Requires:       python2-six
 Requires:       sos
 Requires:       openstack-tripleo-common >= 9.0.1
+Requires:       os-net-config
 Requires:       python2-zaqarclient >= 1.0.0
 Requires:       python2-cryptography >= 1.7.2
 # Dependencies for a containerized undercloud
