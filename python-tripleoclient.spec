@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-tripleoclient
-Version:        6.2.4
+Version:        6.2.5
 Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
@@ -84,6 +84,9 @@ PYTHONPATH=. %{__python2} setup.py testr
 %doc LICENSE README.rst
 
 %changelog
+* Thu May 31 2018 RDO <dev@lists.rdoproject.org> 6.2.5-1
+- Update to 6.2.5
+
 * Thu Feb 08 2018 RDO <dev@lists.rdoproject.org> 6.2.4-1
 - Update to 6.2.4
 
