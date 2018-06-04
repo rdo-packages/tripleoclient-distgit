@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-tripleoclient
-Version:        9.2.1
+Version:        9.2.2
 Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
@@ -105,7 +105,7 @@ PYTHONPATH=. oslo-config-generator --config-file=config-generator/undercloud.con
 install -p -D -m 640 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
 
 %check
-PYTHONPATH=. %{__python2} setup.py testr
+PYTHONPATH=. %{__python2} setup.py testr -t "--concurrency=1"
 
 %files
 %{_datadir}/%{name}
@@ -116,6 +116,9 @@ PYTHONPATH=. %{__python2} setup.py testr
 %files heat-installer
 
 %changelog
+* Mon Jun 04 2018 RDO <dev@lists.rdoproject.org> 9.2.2-1
+- Update to 9.2.2
+
 * Mon Apr 23 2018 RDO <dev@lists.rdoproject.org> 9.2.1-1
 - Update to 9.2.1
 
