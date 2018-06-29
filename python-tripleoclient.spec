@@ -28,6 +28,7 @@ BuildRequires:  python2-openstackclient
 BuildRequires:  python2-oslo-config
 BuildRequires:  python-websocket-client
 BuildRequires:  python2-zaqarclient
+BuildRequires:  python2-testscenarios
 BuildRequires:  PyYAML
 BuildRequires:  python2-passlib
 BuildRequires:  openstack-tripleo-common
