@@ -110,6 +110,7 @@ PYTHONPATH=. oslo-config-generator --config-file=config-generator/undercloud.con
 # so 644 is enough to make it happen. Note instack-undercloud had similar permissions for
 # this file.
 install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
+mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
 %check
 PYTHONPATH=. %{__python2} setup.py testr
@@ -119,6 +120,7 @@ PYTHONPATH=. %{__python2} setup.py testr
 %{python2_sitelib}/tripleoclient*
 %{python2_sitelib}/python_tripleoclient*
 %doc LICENSE README.rst
+%dir %{_sharedstatedir}/tripleo-heat-installer
 
 %files heat-installer
 
