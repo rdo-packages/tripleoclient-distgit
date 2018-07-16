@@ -31,15 +31,15 @@ BuildRequires:  python2-zaqarclient
 BuildRequires:  python2-testscenarios
 BuildRequires:  PyYAML
 BuildRequires:  python2-passlib
+BuildRequires:  python-psutil
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  python2-osc-lib-tests
 BuildRequires:  python-requests-mock
 BuildRequires:  git
-BuildRequires:  instack-undercloud
+BuildRequires:  redhat-lsb-core
 BuildRequires:  openstack-macros
 
-Requires:       instack
-Requires:       instack-undercloud
+Requires:       jq
 Requires:       openstack-selinux
 Requires:       python2-babel >= 2.3.4
 Requires:       python2-cliff
@@ -51,7 +51,7 @@ Requires:       python2-mistralclient >= 3.1.0
 Requires:       python2-openstackclient >= 3.12.0
 Requires:       python2-osc-lib >= 1.8.0
 Requires:       python2-pbr
-Requires:       python2-psutil
+Requires:       python-psutil
 Requires:       python-websocket-client
 Requires:       python2-passlib
 Requires:       python-simplejson >= 3.5.1
