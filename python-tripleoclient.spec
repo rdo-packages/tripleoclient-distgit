@@ -63,6 +63,8 @@ Requires:       python2-zaqarclient >= 1.0.0
 Requires:       python2-cryptography >= 1.7.2
 # Dependencies for a containerized undercloud
 Requires:       python-tripleoclient-heat-installer
+# Dependency for correct validations
+Requires:       openstack-tripleo-validations
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
