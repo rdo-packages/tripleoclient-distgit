@@ -1,4 +1,23 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pydefault 3
+%else
+%global pydefault 2
+%endif
+
+%global pydefault_bin python%{pydefault}
+%global pydefault_sitelib %python%{pydefault}_sitelib
+%global pydefault_install %py%{pydefault}_install
+%global pydefault_build %py%{pydefault}_build
+# End of macros for py2/py3 compatibility
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
+%global client tripleoclient
+
+%global common_desc \
+python-tripleoclient is a Python plugin to OpenstackClient \
+for TripleO <https://github.com/openstack/python-tripleoclient>.
 
 Name:           python-tripleoclient
 Version:        XXX
@@ -11,56 +30,82 @@ Source0:        https://tarballs.openstack.org/python-tripleoclient/python-tripl
 
 BuildArch:      noarch
 
-BuildRequires:  python2-devel
-BuildRequires:  python2-pbr
-BuildRequires:  python2-setuptools
-# testing requirements
-BuildRequires:  python2-fixtures
-BuildRequires:  python2-mock
-BuildRequires:  python2-testrepository
-BuildRequires:  python2-testtools
-BuildRequires:  python2-cliff
-BuildRequires:  python2-ironicclient
-BuildRequires:  python-ironic-inspector-client
-BuildRequires:  python2-heatclient
-BuildRequires:  python2-mistralclient
-BuildRequires:  python2-openstackclient
-BuildRequires:  python2-oslo-config
-BuildRequires:  python-websocket-client
-BuildRequires:  python2-testscenarios
-BuildRequires:  PyYAML
-BuildRequires:  python2-passlib
-BuildRequires:  python-psutil
-BuildRequires:  openstack-tripleo-common
-BuildRequires:  python2-osc-lib-tests
-BuildRequires:  python-requests-mock
 BuildRequires:  git
+BuildRequires:  openstack-macros
+
+%description
+%{common_desc}
+
+%package -n python%{pydefault}-%{client}
+Summary: OpenstackClient plugin for tripleoclient
+%{?python_provide:%python_provide python%{pydefault}-%{client}}
+
+BuildRequires:  python%{pydefault}-devel
+BuildRequires:  python%{pydefault}-pbr
+BuildRequires:  python%{pydefault}-setuptools
+# testing requirements
+BuildRequires:  python%{pydefault}-fixtures
+BuildRequires:  python%{pydefault}-mock
+BuildRequires:  python%{pydefault}-testrepository
+BuildRequires:  python%{pydefault}-testtools
+BuildRequires:  python%{pydefault}-cliff
+BuildRequires:  python%{pydefault}-ironicclient
+BuildRequires:  python%{pydefault}-ironic-inspector-client
+BuildRequires:  python%{pydefault}-heatclient
+BuildRequires:  python%{pydefault}-mistralclient
+BuildRequires:  python%{pydefault}-openstackclient
+BuildRequires:  python%{pydefault}-oslo-config
+BuildRequires:  python%{pydefault}-testscenarios
+BuildRequires:  python%{pydefault}-passlib
+BuildRequires:  python%{pydefault}-osc-lib-tests
+BuildRequires:  openstack-tripleo-common
 BuildRequires:  redhat-lsb-core
 BuildRequires:  openstack-macros
+%if %{pydefault} == 2
+BuildRequires:  PyYAML
+BuildRequires:  python-psutil
+BuildRequires:  python-requests-mock
+BuildRequires:  python-websocket-client
+%else
+BuildRequires:  python%{pydefault}-PyYAML
+BuildRequires:  python%{pydefault}-psutil
+BuildRequires:  python%{pydefault}-requests-mock
+BuildRequires:  python%{pydefault}-websocket-client
+%endif
 
 Requires:       jq
 Requires:       openstack-selinux
-Requires:       python2-babel >= 2.3.4
-Requires:       python2-cliff
+Requires:       python%{pydefault}-babel >= 2.3.4
+Requires:       python%{pydefault}-cliff
+Requires:       python%{pydefault}-cryptography >= 2.1
+Requires:       python%{pydefault}-heatclient >= 1.10.0
+Requires:       python%{pydefault}-ironic-inspector-client >= 1.5.0
+Requires:       python%{pydefault}-ironicclient >= 2.3.0
+Requires:       python%{pydefault}-mistralclient >= 3.1.0
+Requires:       python%{pydefault}-openstackclient >= 3.12.0
+Requires:       python%{pydefault}-osc-lib >= 1.8.0
+Requires:       python%{pydefault}-passlib
+Requires:       python%{pydefault}-pbr
+Requires:       python%{pydefault}-six
+Requires:       python%{pydefault}-zaqarclient >= 1.0.0
+
+%if %{pydefault} == 2
 Requires:       python-ipaddress
-Requires:       python-ironic-inspector-client >= 1.5.0
-Requires:       python2-ironicclient >= 2.3.0
-Requires:       python2-heatclient >= 1.10.0
-Requires:       python2-mistralclient >= 3.1.0
-Requires:       python2-openstackclient >= 3.12.0
-Requires:       python2-osc-lib >= 1.8.0
-Requires:       python2-pbr
 Requires:       python-psutil
-Requires:       python-websocket-client
-Requires:       python2-passlib
 Requires:       python-simplejson >= 3.5.1
-Requires:       python2-six
+Requires:       python-websocket-client
+%else
+Requires:       python%{pydefault}-psutil
+Requires:       python%{pydefault}-simplejson >= 3.5.1
+Requires:       python%{pydefault}-websocket-client
+%endif
+
 Requires:       sos
 Requires:       openstack-tripleo-common >= 9.3.0
 Requires:       os-net-config
-Requires:       python2-cryptography >= 2.1
+
 # Dependencies for a containerized undercloud
-Requires:       python-tripleoclient-heat-installer
+Requires:       python%{pydefault}-tripleoclient-heat-installer
 # Dependency for correct validations
 Requires:       openstack-tripleo-validations
 # Dependency for image building
@@ -70,13 +115,12 @@ Requires:       openstack-tripleo-puppet-elements
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
 
-%description
-python-tripleoclient is a Python plugin to OpenstackClient
-for TripleO <https://github.com/openstack/python-tripleoclient>.
+%description -n python%{pydefault}-%{client}
+%{common_desc}
 
-# Not supported by OSP yet
-%package heat-installer
+%package -n python%{pydefault}-%{client}-heat-installer
 Summary:        Components required for a containerized undercloud
+%{?python_provide:%python_provide python%{pydefault}-%{client}-heat-installer}
 
 # Required for containerized undercloud
 Requires:       docker
@@ -91,7 +135,7 @@ Requires:       openstack-heat-monolith
 Requires:       openstack-tripleo-heat-templates >= 9.0.0
 Requires:       puppet-tripleo >= 9.0.0
 
-%description heat-installer
+%description -n python%{pydefault}-%{client}-heat-installer
 python-tripleoclient-heat-installer is a sub-package that contains all dependencies to
 deploy a containerized undercloud with tripleo client.
 
@@ -104,11 +148,11 @@ sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
 %py_req_cleanup
 
 %build
-%{__python2} setup.py build
-PYTHONPATH=. oslo-config-generator --config-file=config-generator/undercloud.conf
+%{pydefault_build}
+PYTHONPATH=. oslo-config-generator-%{pydefault} --config-file=config-generator/undercloud.conf
 
 %install
-%{__python2} setup.py install --skip-build --root %{buildroot}
+%{pydefault_install}
 # undercloud.conf.sample needs to be copied by the user when deploying an undercloud,
 # so 644 is enough to make it happen. Note instack-undercloud had similar permissions for
 # this file.
@@ -116,15 +160,15 @@ install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/un
 mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
 %check
-PYTHONPATH=. %{__python2} setup.py testr
+PYTHON=%{pydefault_bin} PYTHONPATH=. %{pydefault_bin} setup.py testr
 
-%files
+%files -n python%{pydefault}-%{client}
 %{_datadir}/%{name}
-%{python2_sitelib}/tripleoclient*
-%{python2_sitelib}/python_tripleoclient*
+%{pydefault_sitelib}/tripleoclient*
+%{pydefault_sitelib}/python_tripleoclient*
 %doc LICENSE README.rst
 %dir %{_sharedstatedir}/tripleo-heat-installer
 
-%files heat-installer
+%files -n python%{pydefault}-%{client}-heat-installer
 
 %changelog
