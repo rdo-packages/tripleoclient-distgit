@@ -127,3 +127,4 @@ PYTHONPATH=. %{__python2} setup.py testr
 %files heat-installer
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tripleoclient/commit/?id=23b5f4c65ca164d9ea8ee2374a9c6b5a7a1ce567
