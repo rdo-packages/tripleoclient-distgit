@@ -27,7 +27,6 @@ BuildRequires:  python2-mistralclient
 BuildRequires:  python2-openstackclient
 BuildRequires:  python2-oslo-config
 BuildRequires:  python-websocket-client
-BuildRequires:  python2-zaqarclient
 BuildRequires:  python2-testscenarios
 BuildRequires:  PyYAML
 BuildRequires:  python2-passlib
@@ -45,7 +44,7 @@ Requires:       python2-babel >= 2.3.4
 Requires:       python2-cliff
 Requires:       python-ipaddress
 Requires:       python-ironic-inspector-client >= 1.5.0
-Requires:       python2-ironicclient >= 2.2.0
+Requires:       python2-ironicclient >= 2.3.0
 Requires:       python2-heatclient >= 1.10.0
 Requires:       python2-mistralclient >= 3.1.0
 Requires:       python2-openstackclient >= 3.12.0
@@ -59,8 +58,7 @@ Requires:       python2-six
 Requires:       sos
 Requires:       openstack-tripleo-common >= 9.1.0
 Requires:       os-net-config
-Requires:       python2-zaqarclient >= 1.0.0
-Requires:       python2-cryptography >= 1.7.2
+Requires:       python2-cryptography >= 2.1
 # Dependencies for a containerized undercloud
 Requires:       python-tripleoclient-heat-installer
 # Dependency for correct validations
