@@ -61,6 +61,7 @@ Requires:       os-net-config
 Requires:       python2-cryptography >= 2.1
 # Dependencies for a containerized undercloud
 Requires:       python-tripleoclient-heat-installer
+Requires:       openstack-tripleo-common-containers
 # Dependency for correct validations
 Requires:       openstack-tripleo-validations
 
