@@ -1,0 +1,9 @@
+Code-Review+2: Alex Schultz <aschultz@next-development.com>
+Code-Review+2: Alan Pevec <alan.pevec@redhat.com>
+Workflow+1: Alan Pevec <alan.pevec@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Sat, 01 Sep 2018 08:15:57 +0000
+Reviewed-on: https://review.rdoproject.org/r/16102
+Project: openstack/tripleoclient-distgit
+Branch: refs/heads/rocky-rdo
