@@ -78,6 +78,7 @@ Requires:       openstack-selinux
 Requires:       python%{pyver}-babel >= 2.3.4
 Requires:       python%{pyver}-cliff
 Requires:       python%{pyver}-cryptography >= 2.1
+Requires:       python%{pyver}-gnocchiclient >= 3.1.0
 Requires:       python%{pyver}-heatclient >= 1.10.0
 Requires:       python%{pyver}-ironic-inspector-client >= 1.5.0
 Requires:       python%{pyver}-ironicclient >= 2.3.0
