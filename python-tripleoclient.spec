@@ -125,6 +125,7 @@ Summary:        Components required for a containerized undercloud
 # Required for containerized undercloud
 Requires:       docker
 Requires:       docker-distribution
+Requires:       gnocchiclient >= 3.1.0
 Requires:       podman
 Requires:       python-ipaddr
 Requires:       openvswitch
