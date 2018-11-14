@@ -126,7 +126,7 @@ Summary:        Components required for a containerized undercloud
 # Required for containerized undercloud
 Requires:       docker
 Requires:       docker-distribution
-Requires:       podman
+Requires:       podman == 0.11.1-2.gita4adfe5.el7
 Requires:       python-ipaddr
 Requires:       openvswitch
 Requires:       openstack-heat-agents >= 1.6.0
