@@ -126,7 +126,12 @@ Summary:        Components required for a containerized undercloud
 # Required for containerized undercloud
 Requires:       docker
 Requires:       docker-distribution
-Requires:       podman
+# FIXME(ChandanKumar):Pinning podman to a known version in order to unblock gate
+# See Bug: https://bugs.launchpad.net/tripleo/+bug/1803232
+# Note(hguemar): podman has been conflicting docker for a while, so it is not
+# intended to have both docker and podman installed together.
+# This is a temporary workaround until we fix this.
+Requires:       podman < 0.11.1-1.gita4adfe5.el7
 Requires:       python-ipaddr
 Requires:       openvswitch
 Requires:       openstack-heat-agents >= 1.6.0
