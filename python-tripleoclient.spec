@@ -44,6 +44,7 @@ BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
 BuildRequires:  python%{pyver}-setuptools
 # testing requirements
+BuildRequires:  python%{pyver}-stestr
 BuildRequires:  python%{pyver}-fixtures
 BuildRequires:  python%{pyver}-mock
 BuildRequires:  python%{pyver}-testrepository
@@ -163,8 +164,8 @@ PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=config-generator/under
 install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
 mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
-#%check
-#PYTHON=%{pyver_bin} PYTHONPATH=. %{pyver_bin} setup.py testr
+%check
+stestr-%{pyver} run
 
 %files -n python%{pyver}-%{client}
 %{_datadir}/%{name}
