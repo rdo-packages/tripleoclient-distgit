@@ -161,8 +161,8 @@ PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=config-generator/under
 install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
 mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
-#%check
-#PYTHON=%{pyver_bin} PYTHONPATH=. %{pyver_bin} setup.py testr
+%check
+PYTHON=%{pyver_bin} PYTHONPATH=. %{pyver_bin} -m stestr run
 
 %files -n python%{pyver}-%{client}
 %{_datadir}/%{name}
