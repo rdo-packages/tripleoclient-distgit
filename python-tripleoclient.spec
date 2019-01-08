@@ -162,7 +162,7 @@ install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/un
 mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
 %check
-PYTHON=%{pyver_bin} PYTHONPATH=. %{pyver_bin} setup.py testr
+PYTHON=%{pyver_bin} PYTHONPATH=. %{pyver_bin} -m stestr run
 
 %files -n python%{pyver}-%{client}
 %{_datadir}/%{name}
