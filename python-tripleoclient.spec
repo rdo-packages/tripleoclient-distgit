@@ -56,6 +56,7 @@ BuildRequires:  python%{pyver}-mistralclient
 BuildRequires:  python%{pyver}-openstackclient
 BuildRequires:  python%{pyver}-oslo-config
 BuildRequires:  python%{pyver}-testscenarios
+BuildRequires:  python%{pyver}-stestr
 BuildRequires:  python%{pyver}-passlib
 BuildRequires:  python%{pyver}-osc-lib-tests
 BuildRequires:  openstack-tripleo-common
@@ -163,8 +164,8 @@ PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=config-generator/under
 install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
 mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
-#%check
-#PYTHON=%{pyver_bin} PYTHONPATH=. %{pyver_bin} setup.py testr
+%check
+stestr run
 
 %files -n python%{pyver}-%{client}
 %{_datadir}/%{name}
