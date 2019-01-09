@@ -132,6 +132,7 @@ Requires:       openvswitch
 Requires:       openstack-heat-agents >= 1.6.0
 Requires:       openstack-heat-api >= 11.0.0
 Requires:       openstack-heat-engine >= 11.0.0
+Requires:       python%{pyver}-paunch >= 4.1.0
 # required as we now use --heat-native
 Requires:       openstack-heat-monolith >= 11.0.0
 Requires:       openstack-tripleo-heat-templates >= 9.0.0
