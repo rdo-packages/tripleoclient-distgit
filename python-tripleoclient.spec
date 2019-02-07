@@ -125,7 +125,9 @@ Summary:        Components required for a containerized undercloud
 
 # Required for containerized undercloud
 Requires:       docker
+%if 0%{?rhel} <= 7
 Requires:       docker-distribution
+%endif
 Requires:       podman
 Requires:       openvswitch
 Requires:       openstack-heat-agents >= 1.6.0
