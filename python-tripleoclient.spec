@@ -176,3 +176,4 @@ mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 %files -n python%{pyver}-%{client}-heat-installer
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tripleoclient/commit/?id=623f841ab997a2c0587b3447f7ea78c61890e57f
