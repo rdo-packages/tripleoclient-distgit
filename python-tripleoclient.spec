@@ -103,6 +103,7 @@ Requires:       python%{pyver}-websocket-client
 Requires:       sos
 Requires:       openstack-tripleo-common >= 10.0.0
 Requires:       python%{pyver}-tripleo-common >= 10.0.0
+Requires:       openstack-tripleo-validations >= 10.0.0
 Requires:       os-net-config
 
 # Dependencies for a containerized undercloud
