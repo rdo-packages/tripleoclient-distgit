@@ -60,6 +60,8 @@ Requires:       sos
 Requires:       openstack-tripleo-common >= 7.1.0
 Requires:       python2-zaqarclient >= 1.0.0
 Requires:       python2-cryptography >= 1.7.2
+# Required for config-download/FFU LP#1816447
+Requires:       openstack-tripleo-validations
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
