@@ -124,6 +124,7 @@ Summary:        Components required for a containerized undercloud
 %{?python_provide:%python_provide python%{pyver}-%{client}-heat-installer}
 
 # Required for containerized undercloud
+Requires:       buildah
 Requires:       podman
 Requires:       openvswitch
 Requires:       openstack-heat-agents >= 1.6.0
