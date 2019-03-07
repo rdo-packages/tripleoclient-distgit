@@ -113,6 +113,7 @@ Requires:       openstack-tripleo-validations
 # Dependency for image building
 Requires:       openstack-tripleo-image-elements
 Requires:       openstack-tripleo-puppet-elements
+Requires:       xfsprogs
 
 Obsoletes: python-rdomanager-oscplugin < 0.0.11
 Provides: python-rdomanager-oscplugin = %{version}-%{release}
