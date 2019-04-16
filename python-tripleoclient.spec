@@ -56,7 +56,7 @@ Requires:       python2-passlib
 Requires:       python-simplejson >= 3.5.1
 Requires:       python2-six
 Requires:       sos
-Requires:       openstack-tripleo-common >= 9.3.0
+Requires:       openstack-tripleo-common >= 9.5.0
 Requires:       os-net-config
 Requires:       python2-cryptography >= 2.1
 # Dependencies for a containerized undercloud
