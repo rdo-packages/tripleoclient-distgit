@@ -153,6 +153,7 @@ sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
 %build
 %{pyver_build}
 PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=config-generator/undercloud.conf
+PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=config-generator/minion.conf
 
 %install
 %{pyver_install}
@@ -160,6 +161,7 @@ PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=config-generator/under
 # so 644 is enough to make it happen. Note instack-undercloud had similar permissions for
 # this file.
 install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
+install -p -D -m 644 minion.conf.sample  %{buildroot}/%{_datadir}/%{name}/minion.conf.sample
 mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
 %check
