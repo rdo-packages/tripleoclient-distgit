@@ -1,0 +1,13 @@
+- project:
+    check:
+      jobs:
+        - legacy-weirdo-dlrn-master-packstack-scenario002:
+            dependencies:
+              - legacy-DLRN-rpmbuild-fedora
+            voting: false
+            branches: ^(rpm-)?master$
+        - legacy-weirdo-dlrn-master-puppet-scenario002:
+            dependencies:
+              - legacy-DLRN-rpmbuild-fedora
+            voting: false
+            branches: ^(rpm-)?master$
