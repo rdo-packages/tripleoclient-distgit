@@ -1,0 +1,8 @@
+- project:
+    check:
+      jobs:
+        - distgit-tripleo-master-testing-fedora-28-multinode-1ctlr-featureset030:
+            dependencies:
+              - legacy-DLRN-rpmbuild-fedora
+            voting: false
+            branches: ^(rpm-)?master$
