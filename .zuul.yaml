@@ -1,0 +1,23 @@
+- project:
+    check:
+      jobs:
+        - legacy-weirdo-dlrn-master-packstack-scenario002:
+            dependencies:
+              - legacy-DLRN-rpmbuild-fedora
+            voting: false
+            branches: ^(rpm-)?master$
+        - distgit-tripleo-master-testing-fedora-28-standalone-featureset052:
+            dependencies:
+              - legacy-DLRN-rpmbuild-fedora
+            voting: false
+            branches: ^(rpm-)?master$
+        - distgit-tripleo-master-testing-fedora-28-multinode-1ctlr-featureset030:
+            dependencies:
+              - legacy-DLRN-rpmbuild-fedora
+            voting: false
+            branches: ^(rpm-)?master$
+        - legacy-weirdo-dlrn-master-puppet-scenario002:
+            dependencies:
+              - legacy-DLRN-rpmbuild-fedora
+            voting: false
+            branches: ^(rpm-)?master$
