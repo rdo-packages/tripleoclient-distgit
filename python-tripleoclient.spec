@@ -105,6 +105,7 @@ Requires:       sos
 Requires:       openstack-tripleo-common >= 10.6.0
 Requires:       python%{pyver}-tripleo-common >= 10.0.0
 Requires:       os-net-config
+Requires:       rsync
 
 # Dependencies for a containerized undercloud
 Requires:       python%{pyver}-tripleoclient-heat-installer
