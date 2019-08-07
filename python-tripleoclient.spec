@@ -59,6 +59,8 @@ Requires:       sos
 Requires:       openstack-tripleo-common >= 9.5.0
 Requires:       os-net-config
 Requires:       python2-cryptography >= 2.1
+Requires:       rsync
+
 # Dependencies for a containerized undercloud
 Requires:       python-tripleoclient-heat-installer
 # Dependency for correct validations
