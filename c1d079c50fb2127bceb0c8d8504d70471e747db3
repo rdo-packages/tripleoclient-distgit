@@ -1,0 +1,9 @@
+Code-Review+2: Alex Schultz <aschultz@next-development.com>
+Code-Review+1: Cédric Jeanneret <cjeanner@redhat.com>
+Workflow+1: Alex Schultz <aschultz@next-development.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Wed, 07 Aug 2019 14:26:45 +0000
+Reviewed-on: https://review.rdoproject.org/r/21745
+Project: openstack/tripleoclient-distgit
+Branch: refs/heads/rpm-master
