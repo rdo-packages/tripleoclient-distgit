@@ -74,6 +74,7 @@ BuildRequires:  python%{pyver}-websocket-client
 %endif
 
 Requires:       jq
+Requires:       ncurses
 Requires:       openstack-selinux
 Requires:       python%{pyver}-babel >= 2.3.4
 Requires:       python%{pyver}-cliff
