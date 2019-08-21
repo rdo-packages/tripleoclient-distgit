@@ -1,0 +1,10 @@
+Code-Review+2: Emilien Macchi <emilien@redhat.com>
+Workflow+1: Emilien Macchi <emilien@redhat.com>
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Workflow+1: Yatin Karel <ykarel@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Wed, 21 Aug 2019 05:44:07 +0000
+Reviewed-on: https://review.rdoproject.org/r/21896
+Project: openstack/tripleoclient-distgit
+Branch: refs/heads/rpm-master
