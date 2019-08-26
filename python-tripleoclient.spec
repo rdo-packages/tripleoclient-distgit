@@ -179,3 +179,4 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %files -n python%{pyver}-%{client}-heat-installer
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tripleoclient/commit/?id=c513e4975fc4e4164c9a6c0f39ee59f2adbb72d8
