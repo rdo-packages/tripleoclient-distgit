@@ -96,6 +96,7 @@ Requires:       python-ipaddress
 Requires:       python-psutil
 Requires:       python-simplejson >= 3.5.1
 Requires:       python-websocket-client
+Requires:       python2-futures
 %else
 Requires:       python%{pyver}-psutil
 Requires:       python%{pyver}-simplejson >= 3.5.1
