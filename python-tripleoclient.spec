@@ -90,6 +90,7 @@ Requires:       python%{pyver}-passlib
 Requires:       python%{pyver}-pbr
 Requires:       python%{pyver}-six
 Requires:       python%{pyver}-zaqarclient >= 1.0.0
+Requires:       python%{pyver}-ansible-runner >= 1.4.4
 
 %if %{pyver} == 2
 Requires:       python-ipaddress
