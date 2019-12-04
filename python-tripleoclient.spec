@@ -59,6 +59,7 @@ BuildRequires:  python%{pyver}-oslo-config
 BuildRequires:  python%{pyver}-testscenarios
 BuildRequires:  python%{pyver}-passlib
 BuildRequires:  python%{pyver}-osc-lib-tests
+BuildRequires:  python%{pyver}-ansible-runner
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  redhat-lsb-core
 BuildRequires:  openstack-macros
