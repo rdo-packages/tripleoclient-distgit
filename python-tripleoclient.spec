@@ -20,7 +20,7 @@ python-tripleoclient is a Python plugin to OpenstackClient \
 for TripleO <https://github.com/openstack/python-tripleoclient>.
 
 Name:           python-tripleoclient
-Version:        12.3.0
+Version:        12.3.1
 Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
@@ -183,6 +183,9 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run ||:
 %files -n python%{pyver}-%{client}-heat-installer
 
 %changelog
+* Mon Jan 06 2020 RDO <dev@lists.rdoproject.org> 12.3.1-1
+- Update to 12.3.1
+
 * Mon Oct 21 2019 RDO <dev@lists.rdoproject.org> 12.3.0-1
 - Update to 12.3.0
 
