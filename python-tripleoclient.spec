@@ -5,6 +5,13 @@
 %global pyver 2
 %endif
 
+# Macros for openvswitch/rdo-openvswitch
+%if 0%{?rhel} > 7
+%global ovs_dep rdo-openvswitch
+%else
+global ovs_dep openvswitch
+%endif
+
 %global pyver_bin python%{pyver}
 %global pyver_sitelib %python%{pyver}_sitelib
 %global pyver_install %py%{pyver}_install
@@ -134,7 +141,7 @@ Summary:        Components required for a containerized undercloud
 # Required for containerized undercloud
 Requires:       buildah
 Requires:       podman
-Requires:       openvswitch
+Requires:       %{ovs_dep}
 Requires:       openstack-heat-agents >= 1.6.0
 Requires:       openstack-heat-api >= 11.0.0
 Requires:       openstack-heat-engine >= 11.0.0
