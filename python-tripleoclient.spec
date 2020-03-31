@@ -62,6 +62,7 @@ BuildRequires:  python%{pyver}-osc-lib-tests
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  redhat-lsb-core
 BuildRequires:  openstack-macros
+BuildRequires:  validations-common
 %if %{pyver} == 2
 BuildRequires:  PyYAML
 BuildRequires:  python-psutil
@@ -90,6 +91,7 @@ Requires:       python%{pyver}-passlib
 Requires:       python%{pyver}-pbr
 Requires:       python%{pyver}-six
 Requires:       python%{pyver}-zaqarclient >= 1.0.0
+Requires:       validations-common
 
 %if %{pyver} == 2
 Requires:       python-ipaddress
@@ -169,7 +171,7 @@ install -p -D -m 644 minion.conf.sample  %{buildroot}/%{_datadir}/%{name}/minion
 mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
 %check
-# (amoralej) ignore unit tests - 
+# (amoralej) ignore unit tests -
 # it misses https://github.com/openstack/python-tripleoclient/commit/e7132d47ea9b90c70fa2414d79c86c9a1dfc73a3
 PYTHON=%{pyver_bin} stestr-%{pyver} run ||:
 
@@ -188,4 +190,3 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run ||:
 
 * Mon Oct 21 2019 RDO <dev@lists.rdoproject.org> 12.3.0-1
 - Update to 12.3.0
-
