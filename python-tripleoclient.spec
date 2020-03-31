@@ -71,6 +71,7 @@ BuildRequires:  python%{pyver}-ansible-runner
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  redhat-lsb-core
 BuildRequires:  openstack-macros
+BuildRequires:  validations-common
 %if %{pyver} == 2
 BuildRequires:  PyYAML
 BuildRequires:  python-psutil
@@ -100,6 +101,7 @@ Requires:       python%{pyver}-pbr
 Requires:       python%{pyver}-six
 Requires:       python%{pyver}-zaqarclient >= 1.0.0
 Requires:       python%{pyver}-ansible-runner >= 1.4.4
+Requires:       validations-common
 
 %if %{pyver} == 2
 Requires:       python-ipaddress
