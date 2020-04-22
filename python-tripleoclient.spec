@@ -1,3 +1,5 @@
+%global rhosp 0
+
 # Macros for openvswitch/rdo-openvswitch
 %if 0%{?rhel} > 7 && 0%{?rhosp} == 0
 %global ovs_dep rdo-openvswitch
