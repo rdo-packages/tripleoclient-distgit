@@ -94,8 +94,6 @@ Requires:       python3-tripleo-common >= 10.7.0
 Requires:       os-net-config
 Requires:       rsync
 
-# Dependencies for a containerized undercloud
-Requires:       python3-tripleoclient-heat-installer
 # Dependency for correct validations
 Requires:       openstack-tripleo-validations
 # Dependency for image building
@@ -104,17 +102,6 @@ Requires:       openstack-tripleo-image-elements
 Requires:       openstack-tripleo-puppet-elements
 Requires:       xfsprogs
 
-Obsoletes: python-rdomanager-oscplugin < 0.0.11
-Provides: python-rdomanager-oscplugin = %{version}-%{release}
-
-%description -n python3-%{client}
-%{common_desc}
-
-%package -n python3-%{client}-heat-installer
-Summary:        Components required for a containerized undercloud
-%{?python_provide:%python_provide python3-%{client}-heat-installer}
-
-# Required for containerized undercloud
 Requires:       buildah
 Requires:       podman
 Requires:       %{ovs_dep}
@@ -122,14 +109,15 @@ Requires:       openstack-heat-agents >= 1.6.0
 Requires:       openstack-heat-api >= 11.0.0
 Requires:       openstack-heat-engine >= 11.0.0
 Requires:       python3-paunch >= 4.2.0
-# required as we now use --heat-native
 Requires:       openstack-heat-monolith >= 11.0.0
 Requires:       openstack-tripleo-heat-templates >= 9.0.0
 Requires:       puppet-tripleo >= 9.3.0
 
-%description -n python3-%{client}-heat-installer
-python-tripleoclient-heat-installer is a sub-package that contains all dependencies to
-deploy a containerized undercloud with tripleo client.
+Obsoletes: python-rdomanager-oscplugin < 0.0.11
+Provides: python-rdomanager-oscplugin = %{version}-%{release}
+
+%description -n python3-%{client}
+%{common_desc}
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
@@ -151,7 +139,6 @@ PYTHONPATH=. oslo-config-generator --config-file=config-generator/minion.conf
 # this file.
 install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
 install -p -D -m 644 minion.conf.sample  %{buildroot}/%{_datadir}/%{name}/minion.conf.sample
-mkdir -p %{buildroot}/%{_sharedstatedir}/tripleo-heat-installer
 
 %check
 PYTHON=%{__python3} stestr run
@@ -161,8 +148,5 @@ PYTHON=%{__python3} stestr run
 %{python3_sitelib}/tripleoclient*
 %{python3_sitelib}/python_tripleoclient*
 %doc LICENSE README.rst
-%dir %{_sharedstatedir}/tripleo-heat-installer
-
-%files -n python3-%{client}-heat-installer
 
 %changelog
