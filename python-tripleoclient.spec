@@ -75,7 +75,7 @@ Requires:       python3-heatclient >= 1.10.0
 Requires:       python3-ironic-inspector-client >= 1.5.0
 Requires:       python3-ironicclient >= 2.3.0
 Requires:       python3-mistralclient >= 3.1.0
-Requires:       python3-openstackclient >= 3.12.0
+Requires:       python3-openstackclient >= 5.2.0
 Requires:       python3-osc-lib >= 1.8.0
 Requires:       python3-passlib
 Requires:       python3-pbr
@@ -89,8 +89,8 @@ Requires:       python3-simplejson >= 3.5.1
 Requires:       python3-websocket-client
 
 Requires:       sos
-Requires:       openstack-tripleo-common >= 10.7.0
-Requires:       python3-tripleo-common >= 10.7.0
+Requires:       openstack-tripleo-common >= 12.2.0
+Requires:       python3-tripleo-common >= 12.2.0
 Requires:       os-net-config
 Requires:       rsync
 
