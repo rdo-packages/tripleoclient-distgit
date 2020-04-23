@@ -104,8 +104,8 @@ Requires:       python%{pyver}-websocket-client
 %endif
 
 Requires:       sos
-Requires:       openstack-tripleo-common >= 10.7.0
-Requires:       python%{pyver}-tripleo-common >= 10.7.0
+Requires:       openstack-tripleo-common >= 11.3.1
+Requires:       python%{pyver}-tripleo-common >= 11.3.1
 Requires:       os-net-config
 Requires:       rsync
 
