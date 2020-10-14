@@ -108,9 +108,6 @@ Requires:       %{ovs_dep}
 Requires:       openstack-tripleo-heat-templates >= 9.0.0
 Requires:       puppet-tripleo >= 9.3.0
 
-Obsoletes: python-rdomanager-oscplugin < 0.0.11
-Provides: python-rdomanager-oscplugin = %{version}-%{release}
-
 %description -n python3-%{client}
 %{common_desc}
 
