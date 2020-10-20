@@ -80,7 +80,6 @@ Requires:       python3-osc-lib >= 1.8.0
 Requires:       python3-passlib
 Requires:       python3-pbr
 Requires:       python3-six
-Requires:       python3-zaqarclient >= 1.0.0
 Requires:       python3-ansible-runner >= 1.4.4
 Requires:       validations-common
 
