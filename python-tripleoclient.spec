@@ -80,7 +80,6 @@ BuildRequires:  python3-websocket-client
 Requires:       jq
 Requires:       ncurses
 Requires:       openstack-selinux
-Requires:       python3-babel >= 2.3.4
 Requires:       python3-cliff
 Requires:       python3-cryptography >= 2.1
 Requires:       python3-heatclient >= 1.10.0
@@ -92,7 +91,8 @@ Requires:       python3-osc-lib >= 1.8.0
 Requires:       python3-passlib
 Requires:       python3-pbr
 Requires:       python3-six
-Requires:       python3-ansible-runner >= 1.4.4
+Requires:       python3-ansible-runner >= 1.4.5
+Requires:       python3-openstacksdk >= 0.48.0
 Requires:       validations-common
 
 Requires:       python3-psutil
@@ -100,8 +100,8 @@ Requires:       python3-simplejson >= 3.5.1
 Requires:       python3-websocket-client
 
 Requires:       sos
-Requires:       openstack-tripleo-common >= 12.2.0
-Requires:       python3-tripleo-common >= 12.2.0
+Requires:       openstack-tripleo-common >= 12.6.0
+Requires:       python3-tripleo-common >= 12.6.0
 Requires:       os-net-config
 Requires:       rsync
 
