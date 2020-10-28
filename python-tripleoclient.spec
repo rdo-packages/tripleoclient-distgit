@@ -107,11 +107,6 @@ Requires:       rsync
 
 # Dependency for correct validations
 Requires:       openstack-tripleo-validations
-# Dependency for image building
-Requires:       openstack-ironic-python-agent-builder
-Requires:       openstack-tripleo-image-elements
-Requires:       openstack-tripleo-puppet-elements
-Requires:       xfsprogs
 
 Requires:       buildah
 Requires:       podman
