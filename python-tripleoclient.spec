@@ -107,11 +107,6 @@ Requires:       rsync
 
 # Dependency for correct validations
 Requires:       openstack-tripleo-validations
-# Dependency for image building
-Requires:       openstack-ironic-python-agent-builder
-Requires:       openstack-tripleo-image-elements
-Requires:       openstack-tripleo-puppet-elements
-Requires:       xfsprogs
 
 Requires:       buildah
 Requires:       podman
@@ -122,6 +117,8 @@ Requires:       openstack-heat-engine >= 11.0.0
 Requires:       openstack-heat-monolith >= 11.0.0
 Requires:       openstack-tripleo-heat-templates >= 9.0.0
 Requires:       puppet-tripleo >= 9.3.0
+# Required for image uploading
+Requires:       qemu-img
 
 %description -n python3-%{client}
 %{common_desc}
