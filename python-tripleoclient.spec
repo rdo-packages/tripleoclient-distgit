@@ -123,6 +123,9 @@ Requires:       openstack-heat-monolith >= 11.0.0
 Requires:       openstack-tripleo-heat-templates >= 9.0.0
 Requires:       puppet-tripleo >= 9.3.0
 
+# Dependency for auto-completion
+Requires:       bash-completion
+
 %description -n python3-%{client}
 %{common_desc}
 
