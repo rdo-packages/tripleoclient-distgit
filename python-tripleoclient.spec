@@ -190,3 +190,4 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run ||:
 
 * Mon Oct 21 2019 RDO <dev@lists.rdoproject.org> 12.3.0-1
 - Update to 12.3.0
+# REMOVEME: error caused by commit https://opendev.org/openstack/python-tripleoclienta79f2b41bd1f7999a95f988f14993cc931b92b64
