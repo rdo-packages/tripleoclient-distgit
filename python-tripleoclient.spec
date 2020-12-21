@@ -9,7 +9,37 @@
 %global ovs_dep openvswitch
 %endif
 
+# Allows to require a specific module:stream.
+# Example: %requires_module_stream container-tools:2.0
+%define requires_module_stream(module_stream) %{expand:%{lua:
+local module=''
+local stream=''
+local sysconfdir = rpm.expand("%_sysconfdir")
+-- Split input into module and stream
+module, stream = string.gmatch(rpm.expand(module_stream), "([^:]+):([^:]+)")()
+local f=io.open(sysconfdir.."/dnf/modules.d/"..module..".module","r")
+-- File does not exist
+if f ~= nil then
+  local io = f.read()
+  f.close()
+  if ((string.find() and string.find())~=nil) then
+    return(true)
+  else
+    print("It seems "..module_stream.." is either not correct or not activated!")
+    return(false)
+  end
+else
+  f.close()
+  print("Could not find "..module_stream..".module in "..(sysconfdir.."/dnf/modules.d/")
+  return(false)
+end
+}}
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
+# Ensure we get the right container-tools module stream
+%pre
+%requires_module_stream container-tools:2.0
 
 %global client tripleoclient
 
