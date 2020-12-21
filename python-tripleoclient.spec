@@ -1,3 +1,25 @@
+%define requires_module_stream() %{expand:%{lua:
+wanted_stream = rpm.expand("%1")
+module = ""
+stream = ""
+sysconfdir = rpm.expand("%_sysconfdir")
+module, stream = string.gmatch(wanted_stream, "([^:]+):([^:]+)")()
+f = io.open(sysconfdir .. "/dnf/modules.d/" .. module .. ".module", "r")
+if f ~= nil then
+  local io = f:read()
+  f:close()
+  if ((string.find("stream="..stream) and string.find("state=enabled"))~=nil) then
+    return(true)
+  else
+    print("It seems "..wanted_stream.." is either not correct or not activated!")
+    return(false)
+  end
+else
+  print("Could not find "..wanted_stream..".module in "..sysconfdir.."/dnf/modules.d/")
+  return(false)
+end
+}}
+
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %global rhosp 0
@@ -9,9 +31,11 @@
 %global ovs_dep openvswitch
 %endif
 
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global client tripleoclient
+
 
 %global common_desc \
 python-tripleoclient is a Python plugin to OpenstackClient \
@@ -94,6 +118,7 @@ Requires:       python3-six
 Requires:       python3-ansible-runner >= 1.4.5
 Requires:       python3-openstacksdk >= 0.48.0
 Requires:       validations-common
+Requires:       python-validations-libs >= 1.0.0
 
 Requires:       python3-psutil
 Requires:       python3-simplejson >= 3.5.1
@@ -125,6 +150,9 @@ Requires:       puppet-tripleo >= 9.3.0
 
 %description -n python3-%{client}
 %{common_desc}
+
+%pre
+%requires_module_stream container-tools:2.0
 
 %prep
 # Required for tarball sources verification
