@@ -1,3 +1,38 @@
+# New macro: ensure we have the correct module stream enabled
+%define requires_module_stream() %{expand:
+MS=%1
+MOD=${MS/:*/}
+MV=${MS/*:/}
+FN="%_sysconfdir/dnf/modules.d/$MOD.module"
+# Check for module stream file
+die() {
+        echo "$*" > /dev/stderr
+        exit 1
+}
+[ -f "$FN" ] || die "$FN does not exist or is not a regular file"
+STREAM_OK=0
+ENABLED=0
+while read; do
+        ARG=${REPLY/=*/}
+        VAL=${REPLY/*=/}
+        [ "$ARG" == "$VAL" ] && continue
+        case $ARG in
+        state)
+                [ "$VAL" == "enabled" ] && ENABLED=1
+                ;;
+        stream)
+                [ "$VAL" == "$MV" ] && STREAM_OK=1
+                MV=$VAL
+                ;;
+        *)
+                ;;
+        esac
+done < $FN
+[ $STREAM_OK -ne 1 ] && die "Found: $MOD:$MV, required: $MS"
+[ $ENABLED -ne 1 ] && die "$MS is not enabled"
+exit 0
+}
+
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %global rhosp 0
@@ -125,6 +160,10 @@ Requires:       puppet-tripleo >= 9.3.0
 
 %description -n python3-%{client}
 %{common_desc}
+
+# Ensure we have container-tools:2.0 enabled
+%pre -n python3-%{client}
+%requires_module_stream container-tools:2.0
 
 %prep
 # Required for tarball sources verification
