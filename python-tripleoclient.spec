@@ -1,3 +1,29 @@
+# New macro: ensure we have the correct module stream enabled
+%define requires_module_stream() %{expand:%{lua:
+wanted_stream = rpm.expand("%1")
+module = ""
+stream = ""
+ret = false
+sysconfdir = rpm.expand("%_sysconfdir")
+module, stream = string.gmatch(wanted_stream, "([^:]+):([^:]+)")()
+f = io.open(sysconfdir .. "/dnf/modules.d/" .. module .. ".module", "r")
+if f ~= nil then
+  local match = "stream="..stream
+  for line in f:lines() do
+    if line == match then
+      ret = true
+      break
+    end
+  end
+  f:close()
+  if not ret then
+    print("%{error:It seems " .. module .. " is either not using ".. stream .. " or not enabled!}")
+  end
+else
+  print("%{error:Could not find " .. module .. ".module in " .. sysconfdir .. "/dnf/modules.d/}")
+end
+}}
+
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %global rhosp 0
@@ -125,6 +151,10 @@ Requires:       puppet-tripleo >= 9.3.0
 
 %description -n python3-%{client}
 %{common_desc}
+
+# Ensure we have container-tools:2.0 enabled
+%pre -n python3-%{client}
+%requires_module_stream container-tools:2.0
 
 %prep
 # Required for tarball sources verification
