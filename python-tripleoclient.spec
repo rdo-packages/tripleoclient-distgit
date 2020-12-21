@@ -1,3 +1,31 @@
+%define requires_module_stream() %{expand:%{lua:
+wanted_stream = rpm.expand("%1")
+module = ""
+stream = ""
+ret = false
+sysconfdir = rpm.expand("%_sysconfdir")
+module, stream = string.gmatch(wanted_stream, "([^:]+):([^:]+)")()
+f = io.open(sysconfdir .. "/dnf/modules.d/" .. module .. ".module", "r")
+if f ~= nil then
+  local match = "stream="..stream
+  for line in f:lines() do
+    if line == match then
+      ret = true
+      break
+    end
+  end
+  f:close()
+  if not ret then
+    print("It seems " .. module .. " is either not using ".. stream .. " or not activated!")
+    return(ret)
+  end
+  return(ret)
+else
+  print("Could not find " .. module .. ".module in " .. sysconfdir .. "/dnf/modules.d/")
+  return(ret)
+end
+}}
+
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %global rhosp 0
@@ -9,9 +37,11 @@
 %global ovs_dep openvswitch
 %endif
 
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global client tripleoclient
+
 
 %global common_desc \
 python-tripleoclient is a Python plugin to OpenstackClient \
@@ -125,6 +155,9 @@ Requires:       puppet-tripleo >= 9.3.0
 
 %description -n python3-%{client}
 %{common_desc}
+
+%pre -n python3-%{client}
+%requires_module_stream container-tools:2.0
 
 %prep
 # Required for tarball sources verification
