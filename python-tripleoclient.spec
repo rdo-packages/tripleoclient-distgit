@@ -114,7 +114,7 @@ Requires:       openstack-tripleo-puppet-elements
 Requires:       xfsprogs
 
 Requires:       buildah
-Requires:       podman
+Requires:       @container-tools:2.0/podman
 Requires:       %{ovs_dep}
 Requires:       openstack-heat-agents >= 1.6.0
 Requires:       openstack-heat-api >= 11.0.0
