@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2fd5ce8_9f1f2755",
+        "filename": "python-tripleoclient.spec",
+        "patchSetId": 13
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2021-01-14T00:34:02Z",
+      "side": 1,
+      "message": "this can be properly expressed if tripleoclient were built as a module and have in its modulemd:\n  dependencies:\n  - buildrequires:\n      platform: [el8]\n    requires:\n      platform: [el8]\n      container-tools: [2.0]",
+      "revId": "9837ae4b1259a0f717f5b041aa8b92bd5261627f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
