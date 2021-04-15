@@ -75,7 +75,6 @@ BuildRequires:  validations-common
 BuildRequires:  python3-PyYAML
 BuildRequires:  python3-psutil
 BuildRequires:  python3-requests-mock
-BuildRequires:  python3-websocket-client
 
 Requires:       jq
 Requires:       ncurses
@@ -87,21 +86,21 @@ Requires:       python3-ironic-inspector-client >= 1.5.0
 Requires:       python3-ironicclient >= 2.3.0
 Requires:       python3-mistralclient >= 3.1.0
 Requires:       python3-openstackclient >= 5.2.0
-Requires:       python3-osc-lib >= 1.8.0
+Requires:       python3-osc-lib >= 2.3.0
 Requires:       python3-passlib
 Requires:       python3-pbr
 Requires:       python3-six
 Requires:       python3-ansible-runner >= 1.4.5
 Requires:       python3-openstacksdk >= 0.48.0
 Requires:       validations-common
+Requires:       python3-validations-libs >= 1.0.0
 
 Requires:       python3-psutil
 Requires:       python3-simplejson >= 3.5.1
-Requires:       python3-websocket-client
 
 Requires:       sos
 Requires:       openstack-tripleo-common >= 12.6.0
-Requires:       python3-tripleo-common >= 12.6.0
+Requires:       python3-tripleo-common >= 12.7.0
 Requires:       os-net-config
 Requires:       rsync
 
