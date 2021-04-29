@@ -96,8 +96,8 @@ Requires:       python3-psutil
 Requires:       python3-simplejson >= 3.5.1
 
 Requires:       sos
-Requires:       openstack-tripleo-common >= 15.2.0
-Requires:       python3-tripleo-common >= 15.2.0
+Requires:       openstack-tripleo-common >= 16.0.0
+Requires:       python3-tripleo-common >= 16.0.0
 Requires:       os-net-config
 Requires:       rsync
 
