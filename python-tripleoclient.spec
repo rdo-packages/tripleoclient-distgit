@@ -99,8 +99,8 @@ Requires:       python3-psutil
 Requires:       python3-simplejson >= 3.5.1
 
 Requires:       sos
-Requires:       openstack-tripleo-common >= 12.6.0
-Requires:       python3-tripleo-common >= 12.7.0
+Requires:       openstack-tripleo-common >= 15.2.0
+Requires:       python3-tripleo-common >= 15.2.0
 Requires:       os-net-config
 Requires:       rsync
 
@@ -114,8 +114,8 @@ Requires:       openstack-heat-agents >= 1.6.0
 Requires:       openstack-heat-api >= 16.0.0
 Requires:       openstack-heat-engine >= 16.0.0
 Requires:       openstack-heat-monolith >= 16.0.0
-Requires:       openstack-tripleo-heat-templates >= 9.0.0
-Requires:       puppet-tripleo >= 9.3.0
+Requires:       openstack-tripleo-heat-templates >= 14.1.1
+Requires:       puppet-tripleo >= 14.1.0
 # Required for image uploading
 Requires:       qemu-img
 
