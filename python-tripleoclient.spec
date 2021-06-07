@@ -111,9 +111,9 @@ Requires:       buildah
 Requires:       podman
 Requires:       %{ovs_dep}
 Requires:       openstack-heat-agents >= 1.6.0
-Requires:       openstack-heat-api >= 16.0.0
-Requires:       openstack-heat-engine >= 16.0.0
-Requires:       openstack-heat-monolith >= 16.0.0
+Requires:       openstack-heat-api >= 1:16.0.0
+Requires:       openstack-heat-engine >= 1:16.0.0
+Requires:       openstack-heat-monolith >= 1:16.0.0
 Requires:       openstack-tripleo-heat-templates >= 14.1.1
 Requires:       puppet-tripleo >= 14.1.0
 # Required for image uploading
