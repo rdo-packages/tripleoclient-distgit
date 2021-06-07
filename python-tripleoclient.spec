@@ -117,11 +117,11 @@ Requires:       buildah
 Requires:       podman
 Requires:       %{ovs_dep}
 Requires:       openstack-heat-agents >= 1.6.0
-Requires:       openstack-heat-api >= 11.0.0
-Requires:       openstack-heat-engine >= 11.0.0
-Requires:       openstack-heat-monolith >= 11.0.0
-Requires:       openstack-tripleo-heat-templates >= 9.0.0
-Requires:       puppet-tripleo >= 9.3.0
+Requires:       openstack-heat-api >= 1:15.0.0
+Requires:       openstack-heat-engine >= 1:15.0.0
+Requires:       openstack-heat-monolith >= 1:15.0.0
+Requires:       openstack-tripleo-heat-templates >= 13.0.0
+Requires:       puppet-tripleo >= 13.3.0
 
 %description -n python3-%{client}
 %{common_desc}
