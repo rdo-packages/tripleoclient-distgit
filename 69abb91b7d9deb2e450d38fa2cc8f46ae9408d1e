@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93a486ea_38af7412",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 415
+      },
+      "writtenOn": "2021-06-08T01:27:36Z",
+      "side": 1,
+      "message": "I think this has been the case since liberty for all projects[1] since we moved from a date based versioning upstream. How was it working for earlier release upgrades?   \n\n[1] https://github.com/rdo-packages/keystone-distgit/blob/rpm-master/openstack-keystone.spec#L18",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "69abb91b7d9deb2e450d38fa2cc8f46ae9408d1e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
