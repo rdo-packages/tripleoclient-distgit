@@ -18,7 +18,7 @@ python-tripleoclient is a Python plugin to OpenstackClient \
 for TripleO <https://github.com/openstack/python-tripleoclient>.
 
 Name:           python-tripleoclient
-Version:        16.2.0
+Version:        16.2.1
 Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
@@ -157,6 +157,9 @@ PYTHON=%{__python3} stestr run
 %doc LICENSE README.rst
 
 %changelog
+* Tue Jun 08 2021 RDO <dev@lists.rdoproject.org> 16.2.1-1
+- Update to 16.2.1
+
 * Tue May 18 2021 RDO <dev@lists.rdoproject.org> 16.2.0-1
 - Update to 16.2.0
 
