@@ -157,3 +157,4 @@ PYTHON=%{__python3} stestr run
 %doc LICENSE README.rst
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/python-tripleoclient/commit/8df2e97d221621dcf193aeffca58821440363e22
