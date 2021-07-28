@@ -116,8 +116,9 @@ Requires:       openstack-heat-engine >= 1:16.0.0
 Requires:       openstack-heat-monolith >= 1:16.0.0
 Requires:       openstack-tripleo-heat-templates >= 14.1.1
 Requires:       puppet-tripleo >= 14.1.0
-# Required for image uploading
+# Required for image customization and uploading
 Requires:       qemu-img
+Requires:       lvm2
 
 %description -n python3-%{client}
 %{common_desc}
