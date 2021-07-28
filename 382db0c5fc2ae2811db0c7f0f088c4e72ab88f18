@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab42ebff_f27e3103",
+        "filename": "python-tripleoclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 303
+      },
+      "writtenOn": "2021-07-28T22:32:23Z",
+      "side": 1,
+      "message": "if it\u0027s needed for DIB bits, put it in openstack-tripleo-image-elements (or puppet-elements)",
+      "range": {
+        "startLine": 121,
+        "startChar": 16,
+        "endLine": 121,
+        "endChar": 20
+      },
+      "revId": "382db0c5fc2ae2811db0c7f0f088c4e72ab88f18",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
