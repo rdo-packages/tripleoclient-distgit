@@ -61,7 +61,6 @@ BuildRequires:  python3-cliff
 BuildRequires:  python3-ironicclient
 BuildRequires:  python3-ironic-inspector-client
 BuildRequires:  python3-heatclient
-BuildRequires:  python3-mistralclient
 BuildRequires:  python3-openstackclient
 BuildRequires:  python3-oslo-config
 BuildRequires:  python3-testscenarios
@@ -84,7 +83,6 @@ Requires:       python3-cryptography >= 2.1
 Requires:       python3-heatclient >= 1.10.0
 Requires:       python3-ironic-inspector-client >= 1.5.0
 Requires:       python3-ironicclient >= 2.3.0
-Requires:       python3-mistralclient >= 3.1.0
 Requires:       python3-openstackclient >= 5.2.0
 Requires:       python3-osc-lib >= 2.3.0
 Requires:       python3-passlib
