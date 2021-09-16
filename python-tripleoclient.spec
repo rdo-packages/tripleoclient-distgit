@@ -61,7 +61,6 @@ BuildRequires:  python3-cliff
 BuildRequires:  python3-ironicclient
 BuildRequires:  python3-ironic-inspector-client
 BuildRequires:  python3-heatclient
-BuildRequires:  python3-mistralclient
 BuildRequires:  python3-openstackclient
 BuildRequires:  python3-oslo-config
 BuildRequires:  python3-testscenarios
