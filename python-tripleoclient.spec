@@ -89,7 +89,6 @@ Requires:       python3-openstackclient >= 5.2.0
 Requires:       python3-osc-lib >= 2.3.0
 Requires:       python3-passlib
 Requires:       python3-pbr
-Requires:       python3-six
 Requires:       python3-ansible-runner >= 1.4.5
 Requires:       python3-openstacksdk >= 0.48.0
 Requires:       validations-common
