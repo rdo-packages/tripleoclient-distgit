@@ -172,3 +172,4 @@ PYTHON=%{__python3} stestr run
 * Wed May 05 2021 RDO <dev@lists.rdoproject.org> 16.1.0-1
 - Update to 16.1.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/python-tripleoclient/commit/3d615ea4134cc0b65a69f0aac6d67fe83e12ce3e
