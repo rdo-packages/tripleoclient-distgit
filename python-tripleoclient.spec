@@ -135,7 +135,6 @@ sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
 %build
 %{py3_build}
 PYTHONPATH=. oslo-config-generator --config-file=config-generator/undercloud.conf
-PYTHONPATH=. oslo-config-generator --config-file=config-generator/minion.conf
 
 %install
 %{py3_install}
@@ -143,7 +142,6 @@ PYTHONPATH=. oslo-config-generator --config-file=config-generator/minion.conf
 # so 644 is enough to make it happen. Note instack-undercloud had similar permissions for
 # this file.
 install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
-install -p -D -m 644 minion.conf.sample  %{buildroot}/%{_datadir}/%{name}/minion.conf.sample
 
 %check
 PYTHON=%{__python3} stestr run
