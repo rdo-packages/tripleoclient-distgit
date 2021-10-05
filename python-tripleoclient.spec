@@ -74,6 +74,13 @@ BuildRequires:  validations-common
 BuildRequires:  python3-PyYAML
 BuildRequires:  python3-psutil
 BuildRequires:  python3-requests-mock
+# Dependencies for task-core
+BuildRequires:  python3-stevedore
+BuildRequires:  python3-taskflow
+BuildRequires:  python3-jsonschema
+BuildRequires:  python3-PyYAML
+BuildRequires:  python3-networkx
+
 
 Requires:       jq
 Requires:       ncurses
@@ -100,6 +107,13 @@ Requires:       openstack-tripleo-common >= 16.0.0
 Requires:       python3-tripleo-common >= 16.0.0
 Requires:       os-net-config
 Requires:       rsync
+
+# Dependencies for task-core
+Requires:       python3-stevedore >= 1.20.0
+Requires:       python3-taskflow >= 4.5.0
+Requires:       python3-jsonschema >= 3.2.0
+Requires:       python3-PyYAML >= 3.13
+Requires:       python3-networkx >= 2.1.0
 
 # Dependency for correct validations
 Requires:       openstack-tripleo-validations
