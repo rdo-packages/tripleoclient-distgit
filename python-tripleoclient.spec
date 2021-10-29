@@ -68,7 +68,7 @@ BuildRequires:  python3-passlib
 BuildRequires:  python3-osc-lib-tests
 BuildRequires:  python3-ansible-runner
 BuildRequires:  openstack-tripleo-common
-BuildRequires:  redhat-lsb-core
+BuildRequires:  hostname
 BuildRequires:  openstack-macros
 BuildRequires:  validations-common
 BuildRequires:  python3-PyYAML
