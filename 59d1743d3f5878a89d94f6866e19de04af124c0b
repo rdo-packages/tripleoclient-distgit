@@ -1,0 +1,10 @@
+Workflow+1: Yatin Karel <ykarel@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Code-Review+2: Kevin Carter <kevin@cloudnull.com>
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Mon, 01 Nov 2021 13:04:08 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/tripleoclient-distgit/+/35995
+Project: openstack/tripleoclient-distgit
+Branch: refs/heads/rpm-master
