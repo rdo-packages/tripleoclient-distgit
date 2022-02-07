@@ -92,6 +92,7 @@ Requires:       python%{pyver}-pbr
 Requires:       python%{pyver}-six
 Requires:       python%{pyver}-zaqarclient >= 1.0.0
 Requires:       validations-common
+Requires:       python3-validations-libs >= 1.5.0
 
 %if %{pyver} == 2
 Requires:       python-ipaddress
