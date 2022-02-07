@@ -94,6 +94,7 @@ Requires:       python3-six
 Requires:       python3-ansible-runner >= 1.4.5
 Requires:       python3-openstacksdk >= 0.48.0
 Requires:       validations-common
+Requires:       python3-validations-libs >= 1.5.0
 
 Requires:       python3-psutil
 Requires:       python3-simplejson >= 3.5.1
