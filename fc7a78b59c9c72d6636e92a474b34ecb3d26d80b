@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba3f3c1f_d9caaebf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 547
+      },
+      "writtenOn": "2022-03-30T12:55:22Z",
+      "side": 1,
+      "message": "backport, et can merge with one core.",
+      "revId": "fc7a78b59c9c72d6636e92a474b34ecb3d26d80b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
