@@ -62,7 +62,7 @@ BuildRequires:  python%{pyver}-osc-lib-tests
 BuildRequires:  openstack-tripleo-common
 BuildRequires:  redhat-lsb-core
 BuildRequires:  openstack-macros
-BuildRequires:  validations-common
+BuildRequires:  validations-common >= 1.5.0, < 1.7.0
 %if %{pyver} == 2
 BuildRequires:  PyYAML
 BuildRequires:  python-psutil
@@ -91,8 +91,8 @@ Requires:       python%{pyver}-passlib
 Requires:       python%{pyver}-pbr
 Requires:       python%{pyver}-six
 Requires:       python%{pyver}-zaqarclient >= 1.0.0
-Requires:       validations-common
-Requires:       python%{pyver}-validations-libs >= 1.5.0
+Requires:       validations-common >= 1.5.0, < 1.7.0
+Requires:       python%{pyver}-validations-libs >= 1.5.0, < 1.7.0
 
 %if %{pyver} == 2
 Requires:       python-ipaddress
