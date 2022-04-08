@@ -10,7 +10,7 @@
 %global pyver_install %{expand:%{py%{pyver}_install}}
 %global pyver_build %{expand:%{py%{pyver}_build}}
 # End of macros for py2/py3 compatibility
-
+# DNM
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global client tripleoclient
