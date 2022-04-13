@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
 %global rhosp 0
 
 # Macros for openvswitch/rdo-openvswitch
@@ -18,8 +18,8 @@ python-tripleoclient is a Python plugin to OpenstackClient \
 for TripleO <https://github.com/openstack/python-tripleoclient>.
 
 Name:           python-tripleoclient
-Version:        XXX
-Release:        XXX
+Version:        18.0.0
+Release:        1%{?dist}
 Summary:        OpenstackClient plugin for tripleoclient
 
 License:        ASL 2.0
@@ -30,6 +30,7 @@ Source0:        https://tarballs.openstack.org/python-tripleoclient/python-tripl
 Source101:        https://tarballs.openstack.org/python-tripleoclient/python-tripleoclient-%{version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
+Patch0001:      0001-Set-http_proxy-and-https_proxy-empty.patch
 
 BuildArch:      noarch
 
@@ -165,3 +166,6 @@ PYTHON=%{__python3} stestr run
 %doc LICENSE README.rst
 
 %changelog
+* Wed Apr 13 2022 RDO <dev@lists.rdoproject.org> 18.0.0-1
+- Update to 18.0.0
+

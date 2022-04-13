@@ -1,0 +1,45 @@
+From 3fd109be148246a2b292e4705863d6ed881ac8e5 Mon Sep 17 00:00:00 2001
+From: Joel Capitao <jcapitao@redhat.com>
+Date: Thu, 14 Apr 2022 18:25:05 +0200
+Subject: [PATCH] Set http_proxy and https_proxy empty
+
+CentOS CI environment is setting "http://cache.rdu2.centos.org:8080"
+as http_proxy and https_proxy envvar.
+This changes default behavior of the unittest, so we set
+no value for them in mock.
+---
+ tripleoclient/tests/test_utils.py                     | 3 +++
+ tripleoclient/tests/v1/tripleo/test_tripleo_deploy.py | 3 +++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/tripleoclient/tests/test_utils.py b/tripleoclient/tests/test_utils.py
+index e093c8a5..1f30c01b 100644
+--- a/tripleoclient/tests/test_utils.py
++++ b/tripleoclient/tests/test_utils.py
+@@ -1927,6 +1927,9 @@ class TestCheckHostname(TestCase):
+ 
+ 
+ class TestCheckEnvForProxy(TestCase):
++    @mock.patch.dict(os.environ,
++                     {'http_proxy': '',
++                      'https_proxy': ''})
+     def test_no_proxy(self):
+         utils.check_env_for_proxy()
+ 
+diff --git a/tripleoclient/tests/v1/tripleo/test_tripleo_deploy.py b/tripleoclient/tests/v1/tripleo/test_tripleo_deploy.py
+index 35a002b9..8cc36bd9 100644
+--- a/tripleoclient/tests/v1/tripleo/test_tripleo_deploy.py
++++ b/tripleoclient/tests/v1/tripleo/test_tripleo_deploy.py
+@@ -60,6 +60,9 @@ class TestDeployUndercloud(TestPluginV1):
+ 
+     @mock.patch('tripleoclient.v1.tripleo_deploy.Deploy._is_undercloud_deploy')
+     @mock.patch('tripleoclient.utils.check_hostname')
++    @mock.patch.dict(os.environ,
++                     {'http_proxy': '',
++                      'https_proxy': ''})
+     def test_run_preflight_checks(self, mock_check_hostname, mock_uc):
+         parsed_args = self.check_parser(self.cmd,
+                                         ['--local-ip', '127.0.0.1/8'], [])
+-- 
+2.35.1
+
