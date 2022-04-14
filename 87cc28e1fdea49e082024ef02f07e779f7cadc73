@@ -16,6 +16,23 @@
       "message": "missing openstack-tripleo-common and validations-common",
       "revId": "87cc28e1fdea49e082024ef02f07e779f7cadc73",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd4f7ecd_4a2decb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-04-14T12:56:48Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "87cc28e1fdea49e082024ef02f07e779f7cadc73",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
