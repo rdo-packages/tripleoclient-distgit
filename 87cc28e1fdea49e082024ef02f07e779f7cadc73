@@ -67,6 +67,23 @@
       "message": "it appears that env var no_proxy is empty in default \"test_no_proxy\" [1]\n\nhttps://cbs.centos.org/kojifiles/work/tasks/240/2770240/build.log",
       "revId": "87cc28e1fdea49e082024ef02f07e779f7cadc73",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd84aa47_b7913c2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-04-15T09:35:16Z",
+      "side": 1,
+      "message": "The CentOS CI environment is setting \"http://cache.rdu2.centos.org:8080\" as http_proxy envvar.\nThis changes default behavior of the unittest \"tripleoclient.tests.test_utils.TestCheckEnvForProxy.test_no_proxy\"",
+      "revId": "87cc28e1fdea49e082024ef02f07e779f7cadc73",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
