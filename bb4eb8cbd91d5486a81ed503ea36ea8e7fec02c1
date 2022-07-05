@@ -16,6 +16,23 @@
       "message": "This commit is from master, not ussuri which is EOL since https://github.com/openstack/releases/commit/dfae032000a6595adf3ec722268f73dca14f49f3",
       "revId": "bb4eb8cbd91d5486a81ed503ea36ea8e7fec02c1",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "248c3454_8f38203e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-07-05T06:24:16Z",
+      "side": 1,
+      "message": "Pinned in https://review.rdoproject.org/r/c/rdoinfo/+/43842",
+      "revId": "bb4eb8cbd91d5486a81ed503ea36ea8e7fec02c1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
