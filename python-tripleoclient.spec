@@ -39,6 +39,7 @@ Summary: OpenstackClient plugin for tripleoclient
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
+
 # testing requirements
 BuildRequires:  python3-stestr
 BuildRequires:  python3-fixtures
