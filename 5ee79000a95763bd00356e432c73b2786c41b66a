@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec2a0997_66cf26b9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-08-05T10:19:47Z",
+      "side": 1,
+      "message": "I think we need at least a change in SPEC file, otherwise it will fail but I\u0027m not sure tbh",
+      "revId": "5ee79000a95763bd00356e432c73b2786c41b66a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
