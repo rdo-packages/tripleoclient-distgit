@@ -144,8 +144,7 @@ PYTHONPATH=. oslo-config-generator --config-file=config-generator/undercloud.con
 install -p -D -m 644 undercloud.conf.sample  %{buildroot}/%{_datadir}/%{name}/undercloud.conf.sample
 
 %check
-# amoralej - ignore test errors until we have an ansible-core build for python 3.9
-PYTHON=%{__python3} stestr run || true
+PYTHON=%{__python3} stestr run
 
 %files -n python3-%{client}
 %{_datadir}/%{name}
